@@ -1,0 +1,109 @@
+@import url('../../styles/mixins.css');
+
+.information-result {
+    @mixin flex-just-align start, start;
+    flex-direction: column;
+    height: 100%;
+}
+
+.information-result__title {
+    @mixin text-ser 24, 500, 1;
+    @mixin responsive margin-bottom, 15;
+    color: var(--title-text-color);
+}
+
+.information-result__author {
+    @mixin text-ser 20, 400, 1;
+    @mixin responsive margin-bottom, 49;
+    color: var(--title-text-color);
+}
+
+.information-result__sponsor-checkbox {
+    @mixin text-ser 16, 400, 1;
+    color: var(--title-text-color);
+    @mixin flex-just-align start, center;
+    @mixin responsive gap, 6;
+    @mixin responsive margin-bottom, 10;
+}
+
+#sponsor {
+    appearance: none;
+    @mixin responsive width, 32;
+    @mixin responsive height, 32;
+    background: var(--header-background-color);
+    @mixin responsive border-radius, 60;
+    cursor: pointer;
+}
+
+#sponsor:checked {
+    background-image: url('/images/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.information-result__download-button-place {
+    display: flex;
+}
+
+.information-result__download {
+    @mixin flex-just-align start, center;
+}
+
+.information-result__audio-check {
+    @mixin flex-just-align start, center;
+}
+
+.information-result__download-button {
+    @mixin responsive width, 83;
+    @mixin responsive height, 33;
+    @mixin text-ser 14, 700, 1;
+    border-radius: 2.1vw 0px 0px 2.1vw;
+    border: none;
+    background-color: var(--buttons-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.information-result__drop-list {
+    @mixin responsive width, 33;
+    @mixin responsive height, 33;
+    border-radius: 0px 2.1vw 2.1vw 0px;
+    background-color: #2B2B2B;
+    border: none;
+    cursor: pointer;
+    @mixin responsive margin-right, 10;
+}
+
+.information-result__audio-check {
+    @mixin flex-just-align start, center;
+    @mixin responsive gap, 6;
+    @mixin text-ser 16, 400, 1;
+    color: var(--title-text-color);
+}
+
+.information-result__checkbox {
+    appearance: none;
+    background: var(--buttons-color);
+    @mixin responsive width, 32;
+    @mixin responsive height, 32;
+    @mixin responsive border-radius, 60;
+    cursor: pointer;
+}
+
+.information-result__checkbox:checked {
+    background-image: url('/images/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.information-result__info {
+    @mixin responsive width, 24;
+    @mixin responsive height, 24;
+    border: 2px solid var(--info-color);
+    background: none;
+    color: var(--info-color);
+    @mixin responsive border-radius, 60;
+    cursor: pointer;
+    @mixin text-ser 14, 400, 1;
+}
