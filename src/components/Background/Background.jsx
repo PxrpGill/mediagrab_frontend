@@ -1,12 +1,45 @@
+import React, { useEffect, useState } from 'react';
+
 import './Background.css';
 
 export default function BackGround() {
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 576);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 576);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <div className="background">
-            <svg viewBox="25 20 350 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#FD8232" transform="translate(120 100)" className="first">
-                    <animate attributeName="d" dur="10s" repeatCount="indefinite"
-                        values="M47.4,-53.1C56.3,-38.6,54.7,-19.3,54.3,
+            {isSmallScreen ? (
+                <svg width="390" height="584" viewBox="0 0 390 584" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_67_173)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M57.0138 100.468C109.802 96.606 165.276 116.726 198.555 157.884C229.68 196.377 222.233 250.114 217.888 299.425C214.057 342.89 205.553 386.285 175.627 418.039C144.839 450.708 101.615 465.037 57.0138 470.126C5.12488 476.047 -51.8493 481.805 -92.1536 448.592C-134.952 413.324 -155.61 354.612 -150.135 299.425C-145.044 248.102 -102.426 212.909 -65.2288 177.182C-29.1603 142.54 7.13693 104.117 57.0138 100.468Z" fill="#FD8232" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M407.839 141.246C455.106 144.891 498.879 168.865 525.235 208.272C549.2 244.104 541.458 288.268 534.639 330.833C526.88 379.257 525.942 434.948 484.673 461.44C439.299 490.566 376.179 490.916 330.928 461.599C289.795 434.95 293.988 378.146 282.548 330.489C270.818 281.621 237.565 230.132 265.308 188.228C294.362 144.343 355.364 137.2 407.839 141.246Z" fill="#4C2BC0" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M255.414 129.465C282.479 130.812 310.712 130.345 333.548 144.937C356.409 159.545 365.594 186.722 380.498 209.392C398.437 236.674 427.37 259.07 429.989 291.616C432.772 326.191 416.235 360.025 394.816 387.308C372.777 415.379 341.354 433.17 308.297 446.62C272.334 461.252 230.328 486.661 196.22 468.111C160.715 448.801 163.076 397.039 148.108 359.497C138.278 334.842 133.02 310.237 123.412 285.495C110.197 251.466 69.7135 221.591 81.0824 186.901C92.0873 153.323 138.552 147.955 172.113 136.897C199.137 127.993 226.995 128.049 255.414 129.465Z" fill="#2D9DE7" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_67_173" x="-251" y="0" width="892.49" height="583.436" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_67_173" />
+                        </filter>
+                    </defs>
+                </svg>
+
+            ) : (
+                <svg viewBox="25 20 350 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FD8232" transform="translate(120 100)" className="first">
+                        <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                            values="M47.4,-53.1C56.3,-38.6,54.7,-19.3,54.3,
                     -0.5C53.8,18.4,54.5,36.7,45.6,46C36.7,55.3,18.4,
                     55.6,1.2,54.3C-16,53.1,-31.9,50.5,-46.9,41.2C-61.8,
                     31.9,-75.7,16,-75.3,0.4C-74.9,-15.1,-60.2,
@@ -33,11 +66,11 @@ export default function BackGround() {
                     31.9,-75.7,16,-75.3,0.4C-74.9,-15.1,-60.2,
                     -30.3,-45.2,-44.8C-30.3,-59.4,-15.1,-73.3,2.1,-75.4C19.3,-77.4,38.6,-67.6,47.4,-53.1Z;
                     ">
-                    </animate>
-                </path>
-                <path fill="#4C2BC0" transform="translate(280 100)" width="1204" height="830" className="third">
-                    <animate attributeName="d" dur="15s" repeatCount="indefinite"
-                        values=" M44.3,-45.9C57.4,-31.1,68.2,-15.6,67.1,-1C66.1,13.5,53.2,
+                        </animate>
+                    </path>
+                    <path fill="#4C2BC0" transform="translate(280 100)" width="1204" height="830" className="third">
+                        <animate attributeName="d" dur="15s" repeatCount="indefinite"
+                            values=" M44.3,-45.9C57.4,-31.1,68.2,-15.6,67.1,-1C66.1,13.5,53.2,
                     26.9,40.1,41.9C26.9,56.8,13.5,73.3,-1,74.2C-15.4,75.2,-30.9,60.7,
                     -39.5,45.8C-48.2,30.9,-50.1,15.4,-53.4,-3.2C-56.6,-21.9,-61.2,
                     -43.8,-52.5,-58.6C-43.8,-73.4,-21.9,-81.1,-3.2,-78C15.6,-74.8,31.1,-60.7,44.3,-45.9Z;
@@ -62,11 +95,11 @@ export default function BackGround() {
                     -39.5,45.8C-48.2,30.9,-50.1,15.4,-53.4,-3.2C-56.6,-21.9,-61.2,
                     -43.8,-52.5,-58.6C-43.8,-73.4,-21.9,-81.1,-3.2,-78C15.6,-74.8,31.1,-60.7,44.3,-45.9Z;
                     ">
-                    </animate>
-                </path>
-                <path fill="#2D9DE7" transform="translate(200 100)" width="1204" height="830" className="second">
-                    <animate attributeName="d" dur="15s" repeatCount="indefinite"
-                        values="M51.8,-55C63.7,-39.9,67.5,-20,64.7,-2.8C61.8,14.3,
+                        </animate>
+                    </path>
+                    <path fill="#2D9DE7" transform="translate(200 100)" width="1204" height="830" className="second">
+                        <animate attributeName="d" dur="15s" repeatCount="indefinite"
+                            values="M51.8,-55C63.7,-39.9,67.5,-20,64.7,-2.8C61.8,14.3,
                     52.3,28.5,40.4,42.2C28.5,56,14.3,69.1,1.1,68.1C-12.1,67,-24.2,
                     51.7,-36.3,37.9C-48.4,24.2,-60.5,12.1,-64.9,-4.4C-69.4,-21,
                     -66.1,-41.9,-54,-57C-41.9,-72.1,-21,-81.4,-0.5,-80.9C20,-80.4,39.9,-70.1,51.8,-55Z;
@@ -91,9 +124,9 @@ export default function BackGround() {
                     51.7,-36.3,37.9C-48.4,24.2,-60.5,12.1,-64.9,-4.4C-69.4,-21,
                     -66.1,-41.9,-54,-57C-41.9,-72.1,-21,-81.4,-0.5,-80.9C20,-80.4,39.9,-70.1,51.8,-55Z;
                     ">
-                    </animate>
-                </path>
-            </svg>
+                        </animate>
+                    </path>
+                </svg>)}
         </div>
     )
 }

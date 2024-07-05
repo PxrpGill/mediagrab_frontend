@@ -6,17 +6,18 @@
     --delete-button-color: #530D0D;
     --main-background-color: #141414;
     --header-background-color: #222222;
+    --git-color: #fff;
 }
 
 
 @media (prefers-color-scheme: light) {
     :root {
         --element-color: #FFFFFF;
-        --buttons-color: #EDEEF0;
-        --main-text-color: #222222;
+        --main-text-color: #020101;
         --title-text-color: #000000;
         --delete-button-color: #530D0D;
         --main-background-color: #EDEEF0;
         --header-background-color: #ffffff;
+        --git-color: #000;
     }
 }

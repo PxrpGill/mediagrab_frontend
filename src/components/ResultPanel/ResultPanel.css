@@ -1,0 +1,28 @@
+@import url('../../styles/mixins.css');
+
+.result-section {
+    @mixin responsive width, 587;
+    @mixin responsive height, 202;
+    @mixin responsive padding-top, 30;
+    @mixin responsive padding-right, 40;
+    @mixin responsive padding-bottom, 30;
+    @mixin responsive padding-left, 30;
+    background-color: var(--element-color);
+    @mixin responsive border-radius, 60;
+    overflow: hidden;
+}
+
+.result-section__title--visually-hidden {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    .result-section {
+        @mixin responsive width, 280;
+        @mixin responsive padding-top, 15;
+        @mixin responsive padding-right, 15;
+        @mixin responsive padding-bottom, 15;
+        @mixin responsive padding-left, 15;
+        @mixin responsive border-radius, 30;
+    }
+}
