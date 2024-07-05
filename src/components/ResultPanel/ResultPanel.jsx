@@ -15,6 +15,7 @@ export default function ResultPanel() {
                 <label htmlFor="sponsor" className="information-result__sponsor-checkbox">
                     <input type="checkbox" name="sponsor" id="sponsor" />
                     Sponsorblock
+                    <button className="information-result__info">i</button>
                 </label>
                 <div className="information-result__download">
                     <div className="information-result__download-button-place">

@@ -131,6 +131,16 @@
     display: none;
 }
 
+.information-result__info {
+    @mixin responsive width, 24;
+    @mixin responsive height, 24;
+    border: 2px solid var(--info-color);
+    background: none;
+    color: var(--info-color);
+    @mixin responsive border-radius, 60;
+    cursor: pointer;
+    @mixin text-ser 14, 400, 1;
+}
 
 @media screen and (max-width: 576px) {
     .result-section {
