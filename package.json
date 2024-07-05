@@ -10,6 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "pnpm": "^9.4.0",
+    "postcss": "^8.4.39",
+    "postcss-calc": "^10.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-lightningcss": "^1.0.0",
+    "postcss-mixins": "^10.0.1",
+    "postcss-simple-vars": "^7.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
