@@ -133,5 +133,5 @@ table {
 }
 
 body {
-    background: var(--element-color);
+    background: var(--main-background-color);
 }

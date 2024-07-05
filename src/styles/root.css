@@ -4,6 +4,8 @@
     --main-text-color: #E1E0E6;
     --title-text-color: #FFFFFF;
     --delete-button-color: #530D0D;
+    --main-background-color: #141414;
+    --header-background-color: #222222;
 }
 
 
@@ -14,5 +16,7 @@
         --main-text-color: #222222;
         --title-text-color: #000000;
         --delete-button-color: #530D0D;
+        --main-background-color: #EDEEF0;
+        --header-background-color: #ffffff;
     }
 }

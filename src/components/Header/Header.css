@@ -7,7 +7,7 @@
     @mixin responsive height, 80;
     @mixin flex-just-align center, center;
     @mixin responsive gap, 2;
-    background-color: var(--buttons-color);
+    background-color: var(--header-background-color);
 }
 
 .multi-logo {
