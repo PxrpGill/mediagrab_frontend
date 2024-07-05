@@ -17,12 +17,14 @@ export default function ResultPanel() {
                     Sponsorblock
                 </label>
                 <div className="information-result__download">
-                    <button type="button" className="information-result__download-button">
-                        Скачать
-                    </button>
-                    <button className="information-result__drop-list">
-                        <img src="/images/arrow.svg" alt="Изображение стрелки выпадающего списка" />
-                    </button>
+                    <div className="information-result__download-button-place">
+                        <button type="button" className="information-result__download-button">
+                            Скачать
+                        </button>
+                        <button className="information-result__drop-list">
+                            <img src="/images/arrow.svg" alt="Изображение стрелки выпадающего списка" />
+                        </button>
+                    </div>
                     <label htmlFor="audio" className="information-result__audio-check">
                         <input type="checkbox" name="audio" id="audio" className="information-result__checkbox" />
                         Только звук

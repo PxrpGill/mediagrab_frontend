@@ -20,6 +20,7 @@
     @mixin responsive border-radius, 29;
     background-color: var(--main-background-color);
     overflow: hidden;
+    @mixin flex-just-align center, center;
 }
 
 .image-result__image {
@@ -70,6 +71,10 @@
     background-position: center;
 }
 
+.information-result__download-button-place {
+    display: flex;
+}
+
 .information-result__download {
     @mixin flex-just-align start, center;
 }
@@ -112,6 +117,7 @@
     @mixin responsive width, 32;
     @mixin responsive height, 32;
     @mixin responsive border-radius, 60;
+    cursor: pointer;
 }
 
 .information-result__checkbox:checked {
@@ -129,10 +135,70 @@
 @media screen and (max-width: 576px) {
     .result-section {
         @mixin responsive width, 280;
+        @mixin responsive height, 149;
         @mixin responsive padding-top, 15;
         @mixin responsive padding-right, 15;
         @mixin responsive padding-bottom, 15;
         @mixin responsive padding-left, 15;
         @mixin responsive border-radius, 30;
+        @mixin responsive gap, 10;
+    }
+    
+    .image-result {
+        @mixin responsive width, 155;
+        @mixin responsive height, 113;
+    }
+
+    .information-result__title {
+        @mixin responsive font-size, 14;
+    }
+
+    .information-result__author {
+        @mixin responsive font-size, 14;
+        @mixin responsive margin-bottom, 11;
+    }
+    
+    .information-result__sponsor-checkbox {
+        @mixin responsive font-size, 11;
+        @mixin responsive gap, 2;
+    }
+
+    #sponsor {
+        @mixin responsive width, 23;
+        @mixin responsive height, 23;
+    }
+
+    .information-result__download {
+        flex-direction: column;
+    }
+
+    .information-result__download-button {
+        @mixin responsive width, 70;
+        @mixin responsive height, 27;
+        @mixin responsive font-size, 11;
+    }
+
+    .information-result__drop-list {
+        @mixin responsive width, 27;
+        @mixin responsive height, 27;
+    }
+
+    .information-result__download-button-place {
+        order: 1;
+    }
+
+    .information-result__audio-check {
+        @mixin responsive font-size, 11;
+        @mixin responsive gap, 2;
+        order: 0;
+    }
+
+    .information-result__checkbox {
+        @mixin responsive width, 23;
+        @mixin responsive height, 23;
+    }
+
+    .information-result__drop-list {
+        margin: 0;
     }
 }

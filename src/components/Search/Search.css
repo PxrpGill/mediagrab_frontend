@@ -41,7 +41,7 @@
 @media screen and (max-width: 576px) {
     .search-form {
         /*@mixin responsive margin-top, 180;*/
-        margin-top: 10vh;
+        margin-top: 20vh;
     }
 
     .search-form__input-link-place {
