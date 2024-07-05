@@ -1,0 +1,27 @@
+@import url('../../styles/mixins.css');
+@import url('../../styles/root.css');
+
+
+.header {
+    width: 100%;
+    @mixin responsive height, 80;
+    @mixin flex-just-align center, center;
+    @mixin responsive gap, 2;
+    background-color: var(--buttons-color);
+}
+
+.multi-logo {
+    @mixin responsive width, 68;
+    @mixin responsive height, 68;
+}
+
+.header__title {
+    @mixin text-ser 48, 700, 1;
+    color: var(--title-text-color);
+}
+
+@media screen and (max-width: 576px) {
+    .header__title {
+        @mixin text-ser 24, 700, 1;
+    }
+}
