@@ -6,11 +6,10 @@
     filter: blur(clamp(2.1vw, 2.1vw, 11.1vw));
     top: 18vh;
     z-index: -100;
-    height: 100vh;
+    @mixin responsive height, 700;
 
     >svg {
         width: 100%;
-        height: auto;
         max-height: 100%;
     }
 }
@@ -23,6 +22,7 @@
 
 @media screen and (max-width: 576px) {
     .background {
+        @mixin responsive height, 500;
         top: 13vh;
     }
 }

@@ -134,6 +134,5 @@ table {
 
 body {
     background: var(--main-background-color);
-    min-height: 100vh;
-    overflow: hidden;
+    height: 100vh;
 }

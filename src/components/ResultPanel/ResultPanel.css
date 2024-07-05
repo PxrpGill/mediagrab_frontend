@@ -135,7 +135,7 @@
 @media screen and (max-width: 576px) {
     .result-section {
         @mixin responsive width, 280;
-        @mixin responsive height, 149;
+        @mixin responsive height, 169;
         @mixin responsive padding-top, 15;
         @mixin responsive padding-right, 15;
         @mixin responsive padding-bottom, 15;
@@ -143,21 +143,27 @@
         @mixin responsive border-radius, 30;
         @mixin responsive gap, 10;
     }
-    
+
     .image-result {
+        @mixin responsive width, 155;
+        @mixin responsive height, 113;
+    }
+
+    .image-result__image {
         @mixin responsive width, 155;
         @mixin responsive height, 113;
     }
 
     .information-result__title {
         @mixin responsive font-size, 14;
+        letter-spacing: -1px;
     }
 
     .information-result__author {
         @mixin responsive font-size, 14;
         @mixin responsive margin-bottom, 11;
     }
-    
+
     .information-result__sponsor-checkbox {
         @mixin responsive font-size, 11;
         @mixin responsive gap, 2;
@@ -184,6 +190,7 @@
     }
 
     .information-result__download-button-place {
+        @mixin responsive margin-top, 10;
         order: 1;
     }
 

@@ -1,9 +1,11 @@
 @import url('../../styles/mixins.css');
 
 .footer {
+    position: relative;
     width: 100%;
     @mixin flex-just-align center, center;
     @mixin responsive gap, 16;
+    top: 19vh;
 }
 
 .footer__git-logo {
@@ -31,4 +33,11 @@
 .footer__yt-logo {
     @mixin responsive width, 43;
     @mixin responsive height, 30;
+}
+
+
+@media screen and (max-width: 992px) {
+    .footer {
+        top: 22vh;
+    }
 }
