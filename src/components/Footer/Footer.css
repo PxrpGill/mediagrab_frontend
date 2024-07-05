@@ -1,0 +1,30 @@
+@import url('../../styles/mixins.css');
+
+.footer {
+    position: relative;
+    width: 100%;
+    top: 73vh;
+    @mixin flex-just-align center, center;
+    @mixin responsive gap, 16;
+}
+
+.footer__git-logo {
+    @mixin responsive width, 31;
+    @mixin responsive height, 30; 
+}
+
+.footer__github-text {
+    @mixin text-ser 16, 700, 1;
+    color: var(--title-text-color);
+    text-decoration: underline;
+}
+
+.footer__vk-logo {
+    @mixin responsive width, 30;
+    @mixin responsive height, 30;
+}
+
+.footer__yt-logo {
+    @mixin responsive width, 43;
+    @mixin responsive height, 30;
+}
