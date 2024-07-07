@@ -22,6 +22,6 @@
 
 @media screen and (max-width: 576px) {
     .header__title {
-        @mixin text-ser 24, 700, 1;
+        @mixin text-ser 24, 500, 1;
     }
 }

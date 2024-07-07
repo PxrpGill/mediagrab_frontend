@@ -24,10 +24,13 @@
 }
 
 .image-result__image {
-    @mixin responsive width, 278;
-    @mixin responsive height, 202;
+    width: 100%;
+    height: 100%;
     @mixin text-ser 20, 700, 1;
-    color: var(--title-text-color)
+    @mixin responsive border-radius, 29;
+    color: var(--title-text-color);
+    object-fit: cover;
+    object-position: center;
 }
 
 .result-section__title--visually-hidden {
@@ -49,65 +52,5 @@
     .image-result {
         @mixin responsive width, 155;
         @mixin responsive height, 113;
-    }
-
-    .image-result__image {
-        @mixin responsive width, 155;
-        @mixin responsive height, 113;
-    }
-
-    .information-result__title {
-        @mixin responsive font-size, 14;
-        letter-spacing: -1px;
-    }
-
-    .information-result__author {
-        @mixin responsive font-size, 14;
-        @mixin responsive margin-bottom, 11;
-    }
-
-    .information-result__sponsor-checkbox {
-        @mixin responsive font-size, 11;
-        @mixin responsive gap, 2;
-    }
-
-    #sponsor {
-        @mixin responsive width, 23;
-        @mixin responsive height, 23;
-    }
-
-    .information-result__download {
-        flex-direction: column;
-    }
-
-    .information-result__download-button {
-        @mixin responsive width, 70;
-        @mixin responsive height, 27;
-        @mixin responsive font-size, 11;
-    }
-
-    .information-result__drop-list {
-        @mixin responsive width, 27;
-        @mixin responsive height, 27;
-    }
-
-    .information-result__download-button-place {
-        @mixin responsive margin-top, 10;
-        order: 1;
-    }
-
-    .information-result__audio-check {
-        @mixin responsive font-size, 11;
-        @mixin responsive gap, 2;
-        order: 0;
-    }
-
-    .information-result__checkbox {
-        @mixin responsive width, 23;
-        @mixin responsive height, 23;
-    }
-
-    .information-result__drop-list {
-        margin: 0;
     }
 }

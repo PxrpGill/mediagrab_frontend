@@ -8,6 +8,8 @@
     --header-background-color: #222222;
     --git-color: #fff;
     --info-color: #fff;
+    --modal-color: #6B6B6C;
+    --info-yt-color: #B3B3B4;
 }
 
 
@@ -21,5 +23,6 @@
         --header-background-color: #ffffff;
         --git-color: #000;
         --info-color: #222222;
+        --modal-color: #ECECED;
     }
 }
