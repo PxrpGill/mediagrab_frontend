@@ -1,7 +1,7 @@
 import './MainContent.css';
 
 import Search from '../Search/Search';
-import ResultPanel from '../ResultPanel/ResultPanel';
+import ResultPanel from '../../../components/ResultPanel/ResultPanel';
 
 export default function MainContent() {
     return (
