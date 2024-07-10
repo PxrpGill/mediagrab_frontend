@@ -1,9 +1,10 @@
 import styles from './Header.module.css';
+import multiLogo from '../../../shared/assets/images/multiLogo.png';
 
 export function Header() {
   return (
     <header className={styles.header}>
-      <img className={styles.logo} src="/images/multiLogo.png" alt="Логотип Multigrab" draggable="false" />
+      <img className={styles.logo} src={multiLogo} alt="Логотип Multigrab" draggable="false" />
       <h1 className={styles.title}>MultiGrab</h1>
     </header>
   )

@@ -1,6 +1,8 @@
 import styles from './Footer.module.css';
+import vkLogo from '../../../shared/assets/images/vkLogo.png';
+import ytLogo from '../../../shared/assets/images/ytLogo.png';
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className={styles.footer}>
       <a href="#" className={styles.link} target="_blank">
@@ -36,8 +38,8 @@ export default function Footer() {
       <a href="#" className={styles.link} target="_blank">
         <p className={styles.gitText}>github</p>
       </a>
-      <img src="/images/vkLogo.png" alt="Логотип Вконтакте" className={styles.vkLogo} />
-      <img src="/images/ytLogo.png" alt="Логотип YouTube" className={styles.ytLogo} />
+      <img src={vkLogo} alt="Логотип Вконтакте" className={styles.vkLogo} />
+      <img src={ytLogo} alt="Логотип YouTube" className={styles.ytLogo} />
     </footer>
   );
 }

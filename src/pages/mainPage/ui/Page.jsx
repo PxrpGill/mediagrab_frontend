@@ -1,10 +1,5 @@
-export default function App() {
+export function Page() {
   return (
-    <>
-      <Header />
-      <MainContent />
-      <Background />
-      <Footer />
-    </>
+    <></>
   )
 }
