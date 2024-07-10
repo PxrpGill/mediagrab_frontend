@@ -1,5 +1,5 @@
-@import url('../../styles/mixins.css');
-@import url('../../styles/root.css');
+@import url('../../../shared/styles/mixins.css');
+@import url('../../../shared/styles/root.css');
 
 
 .header {
@@ -10,18 +10,18 @@
     background-color: var(--header-background-color);
 }
 
-.multi-logo {
+.logo {
     @mixin responsive width, 68;
     @mixin responsive height, 68;
 }
 
-.header__title {
+.title {
     @mixin text-ser 48, 700, 1;
     color: var(--title-text-color);
 }
 
 @media screen and (max-width: 576px) {
-    .header__title {
+    .title {
         @mixin text-ser 24, 500, 1;
     }
 }

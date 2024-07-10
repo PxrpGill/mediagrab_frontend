@@ -9,9 +9,9 @@ export default defineConfig({
     modules: {
       scopeBehaviour: 'local',
       globalModulePaths: [/global/],
-    }
+    },
+    postcss: resolve(__dirname, './postcss.config.js')
   },
-  css: resolve(__dirname, './postcss.config.js'),
   build: {
     minify: true,
   }

@@ -8,7 +8,7 @@
     top: 19vh;
 }
 
-.footer__git-logo {
+.gitLogo {
     @mixin responsive width, 31;
     @mixin responsive height, 30;
 
@@ -19,18 +19,18 @@
     }
 }
 
-.footer__github-text {
+.gitText {
     @mixin text-ser 16, 700, 1;
     color: var(--title-text-color);
     text-decoration: underline;
 }
 
-.footer__vk-logo {
+.vkLogo {
     @mixin responsive width, 30;
     @mixin responsive height, 30;
 }
 
-.footer__yt-logo {
+.ytLogo {
     @mixin responsive width, 43;
     @mixin responsive height, 30;
 }
