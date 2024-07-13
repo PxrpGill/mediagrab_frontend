@@ -1,7 +1,0 @@
-@import url('../../styles/mixins.css');
-
-.main__container {
-    @mixin flex-just-align center, center;
-    flex-direction: column;
-    @mixin responsive gap, 5;
-}

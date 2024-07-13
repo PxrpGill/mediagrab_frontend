@@ -5,8 +5,19 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  css: resolve(__dirname, './postcss.config.js'),
+  css: {
+    modules: {
+      scopeBehaviour: 'local',
+      globalModulePaths: [/global/],
+    },
+    postcss: resolve(__dirname, './postcss.config.js')
+  },
   build: {
     minify: true,
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
   }
 })

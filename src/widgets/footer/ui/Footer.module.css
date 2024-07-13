@@ -1,0 +1,43 @@
+@import url('../../../shared/styles/mixins.css');
+
+.footer {
+    position: relative;
+    width: 100%;
+    @mixin flex-just-align center, center;
+    @mixin responsive gap, 16;
+    top: 19vh;
+}
+
+.gitLogo {
+    @mixin responsive width, 31;
+    @mixin responsive height, 30;
+
+    >g {
+        >path {
+            fill: var(--git-color);
+        }
+    }
+}
+
+.gitText {
+    @mixin text-ser 16, 700, 1;
+    color: var(--title-text-color);
+    text-decoration: underline;
+}
+
+.vkLogo {
+    @mixin responsive width, 30;
+    @mixin responsive height, 30;
+}
+
+.ytLogo {
+    @mixin responsive width, 43;
+    @mixin responsive height, 30;
+}
+
+
+@media screen and (max-width: 992px) {
+    .footer {
+        top: 22vh;
+    }
+}
