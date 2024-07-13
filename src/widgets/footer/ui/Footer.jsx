@@ -5,7 +5,7 @@ import ytLogo from '@/shared/assets/images/ytLogo.png';
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a href="#" className={styles.link} target="_blank">
+      <a href="https://github.com/actusnileh/MultiGrab" className={styles.link} target="_blank">
         <svg width="31" height="30" viewBox="0 0 31 30" fill="none"
           xmlns="http://www.w3.org/2000/svg" className={styles.gitLogo}>
           <g clipPath="url(#clip0_69_652)">
@@ -36,7 +36,7 @@ export const Footer = () => {
           </defs>
         </svg>
       </a>
-      <a href="#" className={styles.link} target="_blank">
+      <a href="https://github.com/actusnileh/MultiGrab" className={styles.link} target="_blank">
         <p className={styles.gitText}>github</p>
       </a>
       <img src={vkLogo} alt="Логотип Вконтакте" className={styles.vkLogo} />

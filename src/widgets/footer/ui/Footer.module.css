@@ -34,6 +34,14 @@
     @mixin responsive height, 30;
 }
 
+.link {
+    transition: .5s;
+}
+
+.link:hover {
+    transform: scale(1.1);
+}
+
 
 @media screen and (max-width: 992px) {
     .footer {
