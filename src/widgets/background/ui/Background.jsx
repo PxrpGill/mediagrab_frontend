@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import styles from './BackGround.module.css';
-import { smallWindow } from '../../../shared/consts/window';
+import styles from './Background.module.css';
+import { smallWindow } from '@/shared/consts/window';
 
-export default function BackGround() {
+export const Background = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < smallWindow);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function BackGround() {
   return (
     <div className={styles.background}>
       {isSmallScreen ? (
-        <svg width="390" height="584" viewBox="0 0 390 584" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg  viewBox="0 0 390 584" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_f_67_173)">
             <path fillRule="evenodd" clipRule="evenodd"
               d="M57.0138 100.468C109.802 96.606 165.276 116.726 198.555 

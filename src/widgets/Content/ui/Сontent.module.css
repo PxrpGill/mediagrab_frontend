@@ -1,8 +1,27 @@
-@import url('../../styles/mixins.css');
+@import url('@/shared/styles/mixins.css');
 
+
+.main {
+    width: 100%;
+    height: 80vh;
+    @mixin flex-just-align center, center;
+    transition: .5s ease;
+}
 
 .container {
     @mixin flex-just-align center, center;
     flex-direction: column;
     @mixin responsive gap, 5;
+}
+
+@media screen and (max-width: 992px){
+    .main {
+        height: 65vh;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main {
+        height: 53vh;
+    }
 }

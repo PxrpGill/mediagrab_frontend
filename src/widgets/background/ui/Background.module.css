@@ -1,12 +1,12 @@
-@import url('../../styles/mixins.css');
+@import url('@/shared/styles/mixins.css');
 
 .background {
     position: absolute;
     width: 100%;
     filter: blur(clamp(2.1vw, 2.1vw, 11.1vw));
-    top: 18vh;
+    top: 19vh;
     z-index: -100;
-    @mixin responsive height, 700;
+    @mixin responsive height, 600;
 
     >svg {
         width: 100%;

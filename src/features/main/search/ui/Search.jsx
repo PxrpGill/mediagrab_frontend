@@ -1,3 +1,7 @@
+import styles from './Search.module.css';
+import searchIcon from '@/shared/assets/images/search.svg'
+
+
 export const Search = ({ onSearch }) => {
   const handleSumbit = async (event) => {
     event.preventDefault();
@@ -12,16 +16,16 @@ export const Search = ({ onSearch }) => {
 
   return (
     <form onSubmit={handleSumbit} action="GET"
-      className="search-form">
+      className={styles.form}>
       <input type="text"
         name="query"
-        className="search-form__input-link-place"
+        className={styles.input_link}
         placeholder="Вставьте ссылку на видео" />
       <button type="submit"
-        className="search-form__submit-button">
-        <img src="/images/search.svg"
+        className={styles.submit_button}>
+        <img src={searchIcon}
           alt="Иконка поиска"
-          className="search-form__sumbit-button-icon" />
+          className={styles.searchIcon} />
       </button>
     </form>
   );

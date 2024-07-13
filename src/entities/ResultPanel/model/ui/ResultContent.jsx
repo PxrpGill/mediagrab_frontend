@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { InfoModal } from '@/shared/ui/InfoModal';
+import styles from './ResultContent.module.css';
+import arrow from '@/shared/assets/images/arrow.svg';
+import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
 
 
 export const ResultContent = ({ data }) => {
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);
+  const [isQualityModalOpen, setQualityModalOpen] = useState(false);
 
   const openInfoModal = () => {
     setInfoModalOpen(true);
@@ -13,50 +17,70 @@ export const ResultContent = ({ data }) => {
     setInfoModalOpen(false);
   };
 
+  const openQualityModal = () => {
+    setQualityModalOpen(!isQualityModalOpen);
+  }
+
+  const truncateToTwoWords = (str) => {
+    if (!str) return 'Произошла ошибка';
+    const words = str.split(' ');
+    if (words.length > 3) {
+      return words.slice(0, 3).join(' ') + '...';
+    }
+    return str;
+  };
+
   return (
-    <article>
-      <div className="image-result">
-        <img src={data ? data.preview_url : '#'} alt="Картинка результата поиска"
-          className='image-result__image' />
+    <>
+      <div className={styles.image_block}>
+        <img src={data ? data.preview_url : '#'}
+          alt="Картинка результата поиска"
+          className={styles.image}
+          draggable="false"
+          loading='lazy' />
       </div>
-      <div className="information-result">
-        <h1 className="information-result__title">
-          {data ? data.title : ''}
+      <div className={styles.result_block}>
+        <h1 className={styles.title}>
+          {data ? truncateToTwoWords(data.title) : 'Произошла ошибка'}
         </h1>
-        <p className="information-result__author">
-          {data ? data.author_name : ''}
+        <p className={styles.author}>
+          {data ? truncateToTwoWords(data.author_name) : 'Произошла ошибка'}
         </p>
         <label htmlFor="sponsor"
-          className="information-result__sponsor-checkbox">
-          <input type="checkbox" name="sponsor" id="sponsor" />
+          className={styles.checkbox_block}>
+          <input type="checkbox" name="sponsor"
+            id="sponsor" className={styles.checkbox_sponsor}
+          />
           Sponsorblock
-          <button className="information-result__info"
+          <button className={styles.open_modal_button}
             onMouseEnter={openInfoModal}
             onMouseLeave={closeInfoModal}>
             i
           </button>
           {isInfoModalOpen && <InfoModal />}
         </label>
-        <div className="information-result__download">
-          <div className="information-result__download-button-place">
+        <div className={styles.button_place}>
+          <div className={styles.main_buttons_block}>
             <button type="button"
-              className="information-result__download-button">
+              className={styles.download_button}>
               Скачать
             </button>
-            <button className="information-result__drop-list">
-              <img src="/images/arrow.svg"
+            <button className={styles.drop_list_button}
+              onClick={openQualityModal}>
+              <img src={arrow}
                 alt="Изображение стрелки выпадающего списка" />
             </button>
+            {isQualityModalOpen && <QualityModal />}
           </div>
           <label htmlFor="audio"
-            className="information-result__audio-check">
+            className={styles.audio_check_checkbox_place}>
             <input type="checkbox"
               name="audio" id="audio"
-              className="information-result__checkbox" />
+              className={styles.audio_check_checkbox} />
             Только звук
           </label>
         </div>
       </div>
-    </article>
+    </>
   )
 }

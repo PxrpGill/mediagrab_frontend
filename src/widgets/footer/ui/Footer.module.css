@@ -1,11 +1,10 @@
-@import url('../../../shared/styles/mixins.css');
+@import url('@/shared/styles/mixins.css');
 
 .footer {
     position: relative;
     width: 100%;
     @mixin flex-just-align center, center;
     @mixin responsive gap, 16;
-    top: 19vh;
 }
 
 .gitLogo {
@@ -33,6 +32,14 @@
 .ytLogo {
     @mixin responsive width, 43;
     @mixin responsive height, 30;
+}
+
+.link {
+    transition: .5s;
+}
+
+.link:hover {
+    transform: scale(1.1);
 }
 
 

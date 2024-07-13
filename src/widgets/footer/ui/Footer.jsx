@@ -1,12 +1,13 @@
 import styles from './Footer.module.css';
-import vkLogo from '../../../shared/assets/images/vkLogo.png';
-import ytLogo from '../../../shared/assets/images/ytLogo.png';
+import vkLogo from '@/shared/assets/images/vkLogo.png';
+import ytLogo from '@/shared/assets/images/ytLogo.png';
 
-export function Footer() {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a href="#" className={styles.link} target="_blank">
-        <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.gitLogo}>
+      <a href="https://github.com/actusnileh/MultiGrab" className={styles.link} target="_blank">
+        <svg width="31" height="30" viewBox="0 0 31 30" fill="none"
+          xmlns="http://www.w3.org/2000/svg" className={styles.gitLogo}>
           <g clipPath="url(#clip0_69_652)">
             <path fillRule="evenodd" clipRule="evenodd"
               d="M15.4538 0C6.90826 0 0 6.875 0 15.3803C0 22.1791 4.42636 27.9341 
@@ -35,7 +36,7 @@ export function Footer() {
           </defs>
         </svg>
       </a>
-      <a href="#" className={styles.link} target="_blank">
+      <a href="https://github.com/actusnileh/MultiGrab" className={styles.link} target="_blank">
         <p className={styles.gitText}>github</p>
       </a>
       <img src={vkLogo} alt="Логотип Вконтакте" className={styles.vkLogo} />
