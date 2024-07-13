@@ -18,8 +18,8 @@ export const ResultContent = ({ data }) => {
   const truncateToTwoWords = (str) => {
     if (!str) return 'Произошла ошибка';
     const words = str.split(' ');
-    if (words.length > 2) {
-      return words.slice(0, 2).join(' ') + '...';
+    if (words.length > 3) {
+      return words.slice(0, 3).join(' ') + '...';
     }
     return str;
   };

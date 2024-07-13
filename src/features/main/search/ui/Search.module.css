@@ -18,6 +18,11 @@
     outline: none;
     background-color: var(--element-color);
     color: var(--main-text-color);
+    appearance: none;
+}
+
+.input_link:focus {
+    outline: none;
 }
 
 .submit_button {
