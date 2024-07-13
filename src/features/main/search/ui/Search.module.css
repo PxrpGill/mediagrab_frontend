@@ -1,12 +1,12 @@
-@import url('../../../shared/styles/mixins.css');
+@import url('@/shared/styles/mixins.css');
 
-.search-form {
+.form {
     /*@mixin responsive margin-top, 200;*/
     margin-top: 24vh;
     @mixin flex-just-align center, center;
 }
 
-.search-form__input-link-place {
+.input_link {
     @mixin responsive width, 581;
     @mixin responsive height, 86;
     border-radius: 8.9vw 0px 0px 8.9vw;
@@ -20,7 +20,7 @@
     color: var(--main-text-color);
 }
 
-.search-form__submit-button {
+.submit_button {
     @mixin responsive width, 60;
     @mixin responsive height, 86;
     margin: 0;
@@ -32,19 +32,19 @@
     cursor: pointer;
 }
 
-.search-form__sumbit-button-icon {
+.searchIcon {
     @mixin responsive width, 22;
     @mixin responsive height, 22;
 }
 
 
 @media screen and (max-width: 576px) {
-    .search-form {
+    .form {
         /*@mixin responsive margin-top, 180;*/
         margin-top: 20vh;
     }
 
-    .search-form__input-link-place {
+    .input_link {
         @mixin responsive width, 220;
         @mixin responsive height, 65;
         @mixin text-ser 15, 400, 1;
