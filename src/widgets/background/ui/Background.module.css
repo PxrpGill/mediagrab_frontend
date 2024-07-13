@@ -4,7 +4,7 @@
     position: absolute;
     width: 100%;
     filter: blur(clamp(2.1vw, 2.1vw, 11.1vw));
-    top: 25vh;
+    top: 19vh;
     z-index: -100;
     @mixin responsive height, 600;
 

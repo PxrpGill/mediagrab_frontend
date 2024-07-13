@@ -2,7 +2,6 @@
 
 .form {
     /*@mixin responsive margin-top, 200;*/
-    margin-top: 24vh;
     @mixin flex-just-align center, center;
 }
 

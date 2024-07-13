@@ -132,11 +132,8 @@ table {
     border-spacing: 0;
 }
 
-#root {
-    height: 100vh;
-}
+
 
 body {
     background: var(--main-background-color);
-    height: 100vh;
 }
