@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 import vkLogo from '../../../shared/assets/images/vkLogo.png';
 import ytLogo from '../../../shared/assets/images/ytLogo.png';
 
-export function Footer() {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <a href="#" className={styles.link} target="_blank">

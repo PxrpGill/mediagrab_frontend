@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import styles from './BackGround.module.css';
-import { smallWindow } from '../../../shared/consts/window';
+import styles from './Background.module.css';
+import { smallWindow } from '@/shared/consts/window';
 
-export default function BackGround() {
+export const Background = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < smallWindow);
 
   useEffect(() => {

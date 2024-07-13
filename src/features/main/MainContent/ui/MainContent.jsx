@@ -1,5 +1,5 @@
 import { ResultPanel } from "@/entities/ResultPanel/ui/ResultPanel";
-import { Search } from "../../Search/ui/Search";
+import { Search } from "../../Search";
 import { useState } from "react";
 
 
