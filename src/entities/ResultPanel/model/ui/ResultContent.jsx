@@ -15,6 +15,15 @@ export const ResultContent = ({ data }) => {
     setInfoModalOpen(false);
   };
 
+  const truncateToTwoWords = (str) => {
+    if (!str) return 'Произошла ошибка';
+    const words = str.split(' ');
+    if (words.length > 2) {
+      return words.slice(0, 2).join(' ') + '...';
+    }
+    return str;
+  };
+
   return (
     <>
       <div className={styles.image_block}>
@@ -24,10 +33,10 @@ export const ResultContent = ({ data }) => {
       </div>
       <div className={styles.result_block}>
         <h1 className={styles.title}>
-          {data ? data.title : 'Произошла ошибка'}
+          {data ? truncateToTwoWords(data.title) : 'Произошла ошибка'}
         </h1>
         <p className={styles.author}>
-          {data ? data.author_name : 'Произошла ошибка'}
+          {data ? truncateToTwoWords(data.author_name) : 'Произошла ошибка'}
         </p>
         <label htmlFor="sponsor"
           className={styles.checkbox_block}>

@@ -143,7 +143,6 @@
 @media screen and (max-width: 576px) {
     .title {
         @mixin responsive font-size, 14;
-        letter-spacing: -1px;
     }
 
     .author {
@@ -207,5 +206,20 @@
     .image-result {
         @mixin responsive width, 155;
         @mixin responsive height, 113;
+        @mixin responsive border-radius, 15;
+    }
+
+    .image_block {
+        @mixin responsive width, 155;
+        @mixin responsive height, 113;
+        @mixin responsive border-radius, 15;
+    }
+
+    .audio_check_checkbox:checked {
+        @mixin responsive background-size, 13;
+    }
+
+    .checkbox_sponsor:checked {
+        @mixin responsive background-size, 13;
     }
 }

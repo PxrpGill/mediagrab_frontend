@@ -21,7 +21,7 @@
 @media screen and (max-width: 576px) {
     .block {
         @mixin responsive width, 280;
-        @mixin responsive height, 169;
+        @mixin responsive height, 179;
         @mixin responsive padding-top, 15;
         @mixin responsive padding-right, 15;
         @mixin responsive padding-bottom, 15;

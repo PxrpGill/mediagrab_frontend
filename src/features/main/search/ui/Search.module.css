@@ -52,7 +52,7 @@
         @mixin responsive padding-left, 26;
     }
 
-    .search-form__submit-button {
+    .submit_button {
         @mixin responsive width, 60;
         @mixin responsive height, 65;
     }
