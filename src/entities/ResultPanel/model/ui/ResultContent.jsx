@@ -118,7 +118,8 @@ export const ResultContent = ({ data, link }) => {
                 alt="Изображение стрелки выпадающего списка" />
             </button>
             {isQualityModalOpen && <QualityModal setQuality={setQuality}
-              setQualityModalOpen={setQualityModalOpen} />}
+              setQualityModalOpen={setQualityModalOpen}
+              quality={quality} />}
           </div>
           <label htmlFor="audio"
             className={styles.audio_check_checkbox_place}>

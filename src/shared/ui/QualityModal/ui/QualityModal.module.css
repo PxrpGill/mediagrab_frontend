@@ -43,6 +43,19 @@
 
 .button:hover {
     background-color: var(--hover-button);
+    color: #fff;
+}
+
+.button_selected {
+    width: 100%;
+    @mixin responsive height, 32;
+    @mixin text-ser 14, 400, 1;
+    @mixin flex-just-align space-between, center;
+    cursor: pointer;
+    background-color: #222222;
+    color: #fff;
+    border: none;
+    transition: .5s;
 }
 
 .text_left {

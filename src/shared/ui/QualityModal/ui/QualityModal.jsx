@@ -1,6 +1,6 @@
 import styles from './QualityModal.module.css';
 
-export const QualityModal = ({ setQuality, setQualityModalOpen }) => {
+export const QualityModal = ({ setQuality, setQualityModalOpen, quality }) => {
   const handleClick = (value) => {
     setQualityModalOpen(false);
     setQuality(value);
@@ -9,7 +9,7 @@ export const QualityModal = ({ setQuality, setQualityModalOpen }) => {
   return (
     <dialog className={styles.modal} open>
       <article className={styles.block}>
-        <button className={styles.button} value="lowest"
+        <button className={quality == 'lowest' ? styles.button_selected : styles.button} value="lowest"
           onClick={() => handleClick('lowest')}>
           <p className={styles.text_left}>
             144p
@@ -18,7 +18,7 @@ export const QualityModal = ({ setQuality, setQualityModalOpen }) => {
             Наихудшее
           </p>
         </button>
-        <button className={styles.button} value="low"
+        <button className={quality == 'low' ? styles.button_selected : styles.button} value="low"
           onClick={() => handleClick('low')}>
           <p className={styles.text_left}>
             360p
@@ -27,7 +27,7 @@ export const QualityModal = ({ setQuality, setQualityModalOpen }) => {
             Плохое
           </p>
         </button>
-        <button className={styles.button} value="medium"
+        <button className={quality == 'medium' ? styles.button_selected : styles.button} value="medium"
           onClick={() => handleClick('medium')}>
           <p className={styles.text_left}>
             480p
@@ -36,7 +36,7 @@ export const QualityModal = ({ setQuality, setQualityModalOpen }) => {
             Хорошее
           </p>
         </button>
-        <button className={styles.button} value="high"
+        <button className={quality == 'high' ? styles.button_selected : styles.button} value="high"
           onClick={() => handleClick('high')}>
           <p className={styles.text_left}>
             720p
@@ -45,7 +45,7 @@ export const QualityModal = ({ setQuality, setQualityModalOpen }) => {
             Хорошее
           </p>
         </button>
-        <button className={styles.button} value="highest"
+        <button className={quality == 'highest' ? styles.button_selected : styles.button} value="highest"
           onClick={() => handleClick('highest')}>
           <p className={styles.text_left}>
             1080p
