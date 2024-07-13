@@ -2,10 +2,11 @@ import styles from './Search.module.css';
 import searchIcon from '@/shared/assets/images/search.svg'
 
 
-export const Search = ({ onSearch }) => {
+export const Search = ({ onSearch, setLink }) => {
   const handleSumbit = async (event) => {
     event.preventDefault();
     const query = event.target.elements.query.value;
+    setLink(query);
 
     const response = await fetch(`http://37.128.205.70:8000/information?url=${query}`);
     const data = await response.json();

@@ -1,10 +1,16 @@
 import styles from './QualityModal.module.css';
 
-export const QualityModal = () => {
+export const QualityModal = ({ setQuality, setQualityModalOpen }) => {
+  const handleClick = (value) => {
+    setQualityModalOpen(false);
+    setQuality(value);
+  }
+
   return (
     <dialog className={styles.modal} open>
       <article className={styles.block}>
-        <button className={styles.button}>
+        <button className={styles.button} value="lowest"
+          onClick={() => handleClick('lowest')}>
           <p className={styles.text_left}>
             144p
           </p>
@@ -12,7 +18,8 @@ export const QualityModal = () => {
             Наихудшее
           </p>
         </button>
-        <button className={styles.button}>
+        <button className={styles.button} value="low"
+          onClick={() => handleClick('low')}>
           <p className={styles.text_left}>
             360p
           </p>
@@ -20,7 +27,8 @@ export const QualityModal = () => {
             Плохое
           </p>
         </button>
-        <button className={styles.button}>
+        <button className={styles.button} value="medium"
+          onClick={() => handleClick('medium')}>
           <p className={styles.text_left}>
             480p
           </p>
@@ -28,7 +36,8 @@ export const QualityModal = () => {
             Хорошее
           </p>
         </button>
-        <button className={styles.button}>
+        <button className={styles.button} value="high"
+          onClick={() => handleClick('high')}>
           <p className={styles.text_left}>
             720p
           </p>
@@ -36,7 +45,8 @@ export const QualityModal = () => {
             Хорошее
           </p>
         </button>
-        <button className={styles.button}>
+        <button className={styles.button} value="highest"
+          onClick={() => handleClick('highest')}>
           <p className={styles.text_left}>
             1080p
           </p>

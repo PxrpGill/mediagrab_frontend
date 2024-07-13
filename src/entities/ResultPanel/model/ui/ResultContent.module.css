@@ -13,7 +13,6 @@
     width: 100%;
     height: 100%;
     @mixin text-ser 20, 700, 1;
-    @mixin responsive border-radius, 29;
     color: var(--title-text-color);
     object-fit: cover;
     object-position: center;
@@ -209,7 +208,6 @@
     .image-result {
         @mixin responsive width, 155;
         @mixin responsive height, 113;
-        @mixin responsive border-radius, 15;
     }
 
     .image_block {

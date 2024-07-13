@@ -5,9 +5,13 @@ import arrow from '@/shared/assets/images/arrow.svg';
 import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
 
 
-export const ResultContent = ({ data }) => {
+export const ResultContent = ({ data, link }) => {
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);
   const [isQualityModalOpen, setQualityModalOpen] = useState(false);
+
+  const [quality, setQuality] = useState('high');
+  const [isAudio, setAudio] = useState(false);
+  const [isSponsorblock, setSponsorBlock] = useState(false);
 
   const openInfoModal = () => {
     setInfoModalOpen(true);
@@ -30,6 +34,47 @@ export const ResultContent = ({ data }) => {
     return str;
   };
 
+  const downloadResource = async () => {
+    console.log(link);
+    try {
+      const response = await fetch(
+        `http://37.128.205.70:8000/video_audio?url=${link}&quality=${quality}&only_audio=${isAudio}&sponsor_block=${isSponsorblock}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = downloadUrl;
+
+      const contentDisposition = response.headers.get('content-disposition');
+      let filename = 'downloaded_file';
+
+      if (contentDisposition && contentDisposition.indexOf('filename=') !== -1) {
+        filename = contentDisposition.split('filename=')[1].replace(/['"]/g, '');
+      } else {
+        const contentType = response.headers.get('content-type');
+        if (contentType.includes('video')) {
+          filename += '.mp4';
+        } else if (contentType.includes('audio')) {
+          filename += '.mp3';
+        }
+      }
+
+      downloadLink.setAttribute('download', filename);
+
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    } catch (error) {
+      console.error("Ошибка при получении данных:", error);
+    }
+  };
+
+
   return (
     <>
       <div className={styles.image_block}>
@@ -50,6 +95,7 @@ export const ResultContent = ({ data }) => {
           className={styles.checkbox_block}>
           <input type="checkbox" name="sponsor"
             id="sponsor" className={styles.checkbox_sponsor}
+            onClick={() => setSponsorBlock(!isSponsorblock)}
           />
           Sponsorblock
           <button className={styles.open_modal_button}
@@ -62,7 +108,8 @@ export const ResultContent = ({ data }) => {
         <div className={styles.button_place}>
           <div className={styles.main_buttons_block}>
             <button type="button"
-              className={styles.download_button}>
+              className={styles.download_button}
+              onClick={downloadResource}>
               Скачать
             </button>
             <button className={styles.drop_list_button}
@@ -70,13 +117,15 @@ export const ResultContent = ({ data }) => {
               <img src={arrow}
                 alt="Изображение стрелки выпадающего списка" />
             </button>
-            {isQualityModalOpen && <QualityModal />}
+            {isQualityModalOpen && <QualityModal setQuality={setQuality}
+              setQualityModalOpen={setQualityModalOpen} />}
           </div>
           <label htmlFor="audio"
             className={styles.audio_check_checkbox_place}>
             <input type="checkbox"
               name="audio" id="audio"
-              className={styles.audio_check_checkbox} />
+              className={styles.audio_check_checkbox}
+              onClick={() => setAudio(!isAudio)} />
             Только звук
           </label>
         </div>

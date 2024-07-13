@@ -39,8 +39,6 @@ export const Footer = () => {
       <a href="https://github.com/actusnileh/MultiGrab" className={styles.link} target="_blank">
         <p className={styles.gitText}>github</p>
       </a>
-      <img src={vkLogo} alt="Логотип Вконтакте" className={styles.vkLogo} />
-      <img src={ytLogo} alt="Логотип YouTube" className={styles.ytLogo} />
     </footer>
   );
 }

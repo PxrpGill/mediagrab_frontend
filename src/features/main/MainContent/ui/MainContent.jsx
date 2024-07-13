@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export const MainContent = () => {
   const [searchResults, setSearchResults] = useState(null);
+  const [link, setLink] = useState('');
 
   const handleSearch = (data) => {
     setSearchResults(data);
@@ -12,8 +13,8 @@ export const MainContent = () => {
 
   return (
     <>
-      <Search onSearch={handleSearch} />
-      {searchResults && <ResultPanel data={searchResults} />}
+      <Search onSearch={handleSearch} setLink={setLink} />
+      {searchResults && <ResultPanel data={searchResults} link={link} />}
     </>
   )
 } 
