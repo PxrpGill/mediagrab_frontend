@@ -29,7 +29,9 @@ export const ResultContent = ({ data }) => {
       <div className={styles.image_block}>
         <img src={data ? data.preview_url : '#'}
           alt="Картинка результата поиска"
-          className={styles.image} />
+          className={styles.image}
+          draggable="false" 
+          loading='lazy'/>
       </div>
       <div className={styles.result_block}>
         <h1 className={styles.title}>
