@@ -43,6 +43,7 @@
     @mixin flex-just-align start, center;
     @mixin responsive gap, 6;
     @mixin responsive margin-bottom, 10;
+    position: relative;
 }
 
 .checkbox_sponsor {
@@ -62,6 +63,8 @@
 }
 
 .main_buttons_block {
+    overflow: visible;
+    position: relative;
     display: flex;
 }
 

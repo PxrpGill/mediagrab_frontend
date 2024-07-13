@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { InfoModal } from '@/shared/ui/InfoModal';
 import styles from './ResultContent.module.css';
 import arrow from '@/shared/assets/images/arrow.svg';
+import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
 
 
 export const ResultContent = ({ data }) => {
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);
+  const [isQualityModalOpen, setQualityModalOpen] = useState(false);
 
   const openInfoModal = () => {
     setInfoModalOpen(true);
@@ -14,6 +16,10 @@ export const ResultContent = ({ data }) => {
   const closeInfoModal = () => {
     setInfoModalOpen(false);
   };
+
+  const openQualityModal = () => {
+    setQualityModalOpen(!isQualityModalOpen);
+  }
 
   const truncateToTwoWords = (str) => {
     if (!str) return 'Произошла ошибка';
@@ -30,8 +36,8 @@ export const ResultContent = ({ data }) => {
         <img src={data ? data.preview_url : '#'}
           alt="Картинка результата поиска"
           className={styles.image}
-          draggable="false" 
-          loading='lazy'/>
+          draggable="false"
+          loading='lazy' />
       </div>
       <div className={styles.result_block}>
         <h1 className={styles.title}>
@@ -59,10 +65,12 @@ export const ResultContent = ({ data }) => {
               className={styles.download_button}>
               Скачать
             </button>
-            <button className={styles.drop_list_button}>
+            <button className={styles.drop_list_button}
+              onClick={openQualityModal}>
               <img src={arrow}
                 alt="Изображение стрелки выпадающего списка" />
             </button>
+            {isQualityModalOpen && <QualityModal />}
           </div>
           <label htmlFor="audio"
             className={styles.audio_check_checkbox_place}>

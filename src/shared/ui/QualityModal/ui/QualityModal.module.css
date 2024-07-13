@@ -1,0 +1,54 @@
+@import url('@/shared/styles/mixins.css');
+
+
+.modal {
+    @mixin responsive width, 240;
+    @mixin responsive height, 168;
+    padding: 0;
+    border: none;
+    background: none;
+    @mixin responsive top, 30;
+    animation: 0.5s openModal ease;
+    overflow: hidden;
+}
+
+@keyframes openModal {
+    from {
+        height: 0;
+    }
+
+    to {
+        @mixin responsive height, 168;
+    }
+}
+
+.block {
+    width: 100%;
+    height: 100%;
+    @mixin flex-just-align center, center;
+    flex-direction: column;
+}
+
+.button {
+    width: 100%;
+    @mixin responsive height, 32;
+    @mixin text-ser 14, 400, 1;
+    @mixin flex-just-align space-between, center;
+    cursor: pointer;
+    background-color: var(--element-color);
+    color: var(--title-text-color);
+    border: none;
+    transition: .5s;
+}
+
+.button:hover {
+    background-color: var(--hover-button);
+}
+
+.text_left {
+    @mixin responsive margin-left, 16;
+}
+
+.text_right {
+    @mixin responsive margin-right, 16;
+}

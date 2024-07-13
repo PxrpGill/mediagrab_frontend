@@ -9,7 +9,6 @@
     @mixin responsive padding-left, 30;
     background-color: var(--element-color);
     @mixin responsive border-radius, 60;
-    overflow: hidden;
     @mixin flex-just-align start, center;
     @mixin responsive gap, 30;
     animation: 0.9s addElement ease;

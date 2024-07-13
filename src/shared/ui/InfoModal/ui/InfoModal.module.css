@@ -8,19 +8,33 @@
     @mixin responsive padding-bottom, 10;
     @mixin responsive padding-left, 16;
     @mixin responsive padding-right, 16;
-    left: 53%;
-    top: calc(100% - 50vh);
+    left: 105%;
+    top: 20%;
     background-color: var(--modal-color);
     @mixin responsive border-radius, 30;
+    animation: 0.5s openModal ease;
+    overflow: hidden;
+}
+
+@keyframes openModal {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .about_text {
     @mixin text-ser 14, 700, 1.7;
     @mixin responsive word-spacing, 1;
-    color: var(--title-text-color)
+    color: var(--title-text-color);
+    @mixin responsive width, 292;
 }
 
 .title {
     @mixin text-ser 14, 300, 1.5;
     color: var(--info-yt-color);
+    @mixin responsive width, 292;
 }
