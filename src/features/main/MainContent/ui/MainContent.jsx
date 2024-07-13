@@ -13,7 +13,7 @@ export const MainContent = () => {
   return (
     <>
       <Search onSearch={handleSearch} />
-      <ResultPanel data={searchResults} />
+      {searchResults && <ResultPanel data={searchResults} />}
     </>
   )
 } 

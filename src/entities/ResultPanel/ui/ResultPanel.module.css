@@ -12,6 +12,20 @@
     overflow: hidden;
     @mixin flex-just-align start, center;
     @mixin responsive gap, 30;
+    animation: 0.9s addElement ease;
+    z-index: -50;
+}
+
+@keyframes addElement {
+    from {
+        transform: translateY(-37%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0%);
+        opacity: 1;
+    }
 }
 
 .hidden {
