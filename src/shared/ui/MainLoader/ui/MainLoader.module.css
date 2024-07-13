@@ -1,0 +1,8 @@
+.modal {
+    background: none;
+    border: none;
+    backdrop-filter: blur(10px);
+    
+    position: absolute;
+}
+
