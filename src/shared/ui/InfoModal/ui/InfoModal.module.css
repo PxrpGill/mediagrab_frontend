@@ -1,0 +1,26 @@
+@import url('@/shared/styles/mixins.css');
+
+.dialog {
+    border: none;
+    @mixin responsive width, 324;
+    @mixin responsive height, 144;
+    @mixin responsive padding-top, 10;
+    @mixin responsive padding-bottom, 10;
+    @mixin responsive padding-left, 16;
+    @mixin responsive padding-right, 16;
+    left: 53%;
+    top: calc(100% - 50vh);
+    background-color: var(--modal-color);
+    @mixin responsive border-radius, 30;
+}
+
+.about_text {
+    @mixin text-ser 14, 700, 1.7;
+    @mixin responsive word-spacing, 1;
+    color: var(--title-text-color)
+}
+
+.title {
+    @mixin text-ser 14, 300, 1.5;
+    color: var(--info-yt-color);
+}

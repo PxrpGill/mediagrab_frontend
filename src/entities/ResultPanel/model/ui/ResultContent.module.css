@@ -1,4 +1,4 @@
-@import url('../../styles/mixins.css');
+@import url('@/shared/styles/mixins.css');
 
 .information-result {
     @mixin flex-just-align start, start;
@@ -113,31 +113,6 @@
     @mixin responsive border-radius, 60;
     cursor: pointer;
     @mixin text-ser 14, 400, 1;
-}
-
-.inforamtion-sponsor {
-    border: none;
-    @mixin responsive width, 324;
-    @mixin responsive height, 144;
-    @mixin responsive padding-top, 10;
-    @mixin responsive padding-bottom, 10;
-    @mixin responsive padding-left, 16;
-    @mixin responsive padding-right, 16;
-    left: 53%;
-    top: calc(100% - 50vh);
-    background-color: var(--modal-color);
-    @mixin responsive border-radius, 30;
-}   
-
-.information-sponsor__main-information {
-    @mixin text-ser 14, 700, 1.7;
-    @mixin responsive word-spacing, 1;
-    color: var(--title-text-color)
-}
-
-.information-sponsor__title {
-    @mixin text-ser 14, 300, 1.5;
-    color: var(--info-yt-color);
 }
 
 @media screen and (max-width: 992px) {
