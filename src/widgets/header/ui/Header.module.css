@@ -1,5 +1,5 @@
-@import url('../../../shared/styles/mixins.css');
-@import url('../../../shared/styles/root.css');
+@import url('@/shared/styles/mixins.css');
+@import url('@/shared/styles/root.css');
 
 
 .header {
