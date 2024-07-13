@@ -1,6 +1,6 @@
-@import url('../../../shared/styles/mixins.css');
+@import url('@/shared/styles/mixins.css');
 
-.result-section {
+.block {
     @mixin responsive width, 587;
     @mixin responsive height, 202;
     @mixin responsive padding-top, 30;
@@ -14,31 +14,12 @@
     @mixin responsive gap, 30;
 }
 
-.image-result {
-    @mixin responsive width, 278;
-    @mixin responsive height, 202;
-    @mixin responsive border-radius, 29;
-    background-color: var(--main-background-color);
-    overflow: hidden;
-    @mixin flex-just-align center, center;
-}
-
-.image-result__image {
-    width: 100%;
-    height: 100%;
-    @mixin text-ser 20, 700, 1;
-    @mixin responsive border-radius, 29;
-    color: var(--title-text-color);
-    object-fit: cover;
-    object-position: center;
-}
-
-.result-section__title--visually-hidden {
+.hidden {
     display: none;
 }
 
 @media screen and (max-width: 576px) {
-    .result-section {
+    .block {
         @mixin responsive width, 280;
         @mixin responsive height, 169;
         @mixin responsive padding-top, 15;
@@ -47,10 +28,5 @@
         @mixin responsive padding-left, 15;
         @mixin responsive border-radius, 30;
         @mixin responsive gap, 10;
-    }
-
-    .image-result {
-        @mixin responsive width, 155;
-        @mixin responsive height, 113;
     }
 }
