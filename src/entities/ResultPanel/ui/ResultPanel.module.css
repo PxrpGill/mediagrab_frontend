@@ -13,7 +13,7 @@
     @mixin flex-just-align start, center;
     @mixin responsive gap, 30;
     animation: 0.9s addElement ease;
-    z-index: -50;
+    z-index: 1;
 }
 
 @keyframes addElement {
