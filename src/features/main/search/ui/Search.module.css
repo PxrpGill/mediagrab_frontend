@@ -48,6 +48,11 @@
     @mixin responsive height, 24;
 }
 
+.cross {
+    @mixin responsive width, 22;
+    @mixin responsive height, 22;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);

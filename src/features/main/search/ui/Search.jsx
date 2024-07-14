@@ -3,11 +3,13 @@ import searchIcon from '@/shared/assets/images/search.svg'
 import { useState } from 'react';
 
 
-export const Search = ({ onSearch, setLink }) => {
+export const Search = ({ onSearch, setLink, setLinkState, isLink }) => {
   const [isLoading, setLoading] = useState(false);
+  const [query, setQuery] = useState('');
 
   const handleSumbit = async (event) => {
     try {
+      setLinkState(false);
       setLoading(true);
       event.preventDefault();
       const query = event.target.elements.query.value;
@@ -21,22 +23,30 @@ export const Search = ({ onSearch, setLink }) => {
       console.log(error);
     } finally {
       setLoading(false);
-
+      setLinkState(true);
     }
   };
 
+  const clearForm = (event) => {
+    event.preventDefault();
+    setQuery('');
+    setLinkState(false);
+  }
 
   return (
-    <form onSubmit={handleSumbit} action="GET"
+    <form onSubmit={isLink ? clearForm : handleSumbit} action="GET"
       className={styles.form}>
       <input type="text"
         name="query"
         className={styles.input_link}
-        placeholder="Вставьте ссылку на видео" />
+        placeholder="Вставьте ссылку на видео"
+        value={query}
+        onChange={(event) => setQuery(event.target.value)} />
       <button type="submit"
         className={styles.submit_button}>
         {isLoading ? (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.loader}>
+          <svg width="24" height="24" viewBox="0 0 24 24"
+            fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.loader}>
             <path d="M12 22C10.6333 22 9.34167 21.7375 8.125 21.2125C6.90833 20.6875 5.84583 19.9708 4.9375 
             19.0625C4.02917 18.1542 3.3125 17.0917 2.7875 15.875C2.2625 14.6583 2 13.3667 2 12C2 10.6167 2.2625 
             9.32083 2.7875 8.1125C3.3125 6.90417 4.02917 5.84583 4.9375 4.9375C5.84583 4.02917 6.90833 3.3125 
@@ -49,11 +59,18 @@ export const Search = ({ onSearch, setLink }) => {
             15.875C20.6875 17.0917 19.9708 18.1542 19.0625 19.0625C18.1542 19.9708 17.0958 20.6875 15.8875 
             21.2125C14.6792 21.7375 13.3833 22 12 22Z" fill="#D5D4DA" />
           </svg>
-
         ) : (
-          <img src={searchIcon}
-            alt="Иконка поиска"
-            className={styles.searchIcon} />
+          isLink ? (
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.cross}>
+              <path d="M2.2 22L0 19.8L8.8 11L0 2.2L2.2 0L11 8.8L19.8 0L22 2.2L13.2 11L22 19.8L19.8 22L11 13.2L2.2 22Z" fill="#D7D6DC" />
+            </svg>
+
+
+          ) : (
+            <img src={searchIcon}
+              alt="Иконка поиска"
+              className={styles.searchIcon} />
+          )
         )}
       </button>
     </form>

@@ -8,16 +8,13 @@ export const MainContent = () => {
   const [searchResults, setSearchResults] = useState(null);
   const [link, setLink] = useState('');
   const [isLoading, setLoading] = useState(false);
-
-  const handleSearch = (data) => {
-    setSearchResults(data);
-  }
+  const [isLink, setLinkState] = useState(false);
 
   return (
     <>
       {isLoading && <MainLoader />}
-      <Search onSearch={handleSearch} setLink={setLink} />
-      {searchResults && <ResultPanel data={searchResults} link={link} setLoading={setLoading} />}
+      <Search onSearch={setSearchResults} setLink={setLink} setLinkState={setLinkState} isLink={isLink} />
+      {searchResults && isLink && <ResultPanel data={searchResults} link={link} setLoading={setLoading} />}
     </>
   )
 } 
