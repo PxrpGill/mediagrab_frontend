@@ -41,7 +41,8 @@ export const Search = ({ onSearch, setLink, setLinkState, isLink }) => {
         className={styles.input_link}
         placeholder="Вставьте ссылку на видео"
         value={query}
-        onChange={(event) => setQuery(event.target.value)} />
+        onChange={(event) => setQuery(event.target.value)}
+        disabled={isLink || isLoading} />
       <button type="submit"
         className={styles.submit_button}>
         {isLoading ? (
@@ -64,8 +65,6 @@ export const Search = ({ onSearch, setLink, setLinkState, isLink }) => {
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.cross}>
               <path d="M2.2 22L0 19.8L8.8 11L0 2.2L2.2 0L11 8.8L19.8 0L22 2.2L13.2 11L22 19.8L19.8 22L11 13.2L2.2 22Z" fill="#D7D6DC" />
             </svg>
-
-
           ) : (
             <img src={searchIcon}
               alt="Иконка поиска"
