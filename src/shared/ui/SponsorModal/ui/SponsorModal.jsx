@@ -3,7 +3,9 @@ import styles from './SponsorModal.module.css';
 export const SponsorModal = ({ data }) => {
   const trueData = () => (
     <>
-      <h2 className={styles.title}>Найдены рекламные интеграции на промежутках:</h2>
+      <h2 className={styles.title}>
+        {data.length == 1 ? 'Найдена рекламная интеграция на промежутке:' : 'Найдены рекламные интеграции на промежутках:'}
+      </h2>
       {
         data.map(
           (element, index) => <p className={styles.data} key={index}>{element}</p>

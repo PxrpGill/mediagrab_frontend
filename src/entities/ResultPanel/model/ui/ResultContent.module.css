@@ -67,6 +67,15 @@
     display: flex;
 }
 
+.sponsor_block_open_modal {
+    cursor: pointer;
+    transition: .5s;
+}
+
+.sponsor_block_open_modal:hover {
+    transform: scale(1.05);
+}
+
 .button_place {
     @mixin flex-just-align start, center;
 }
