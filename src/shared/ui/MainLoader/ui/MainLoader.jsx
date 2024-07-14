@@ -1,9 +1,20 @@
 import styles from './MainLoader.module.css';
+import { useEffect, useState } from 'react';
 
 
 export const MainLoader = () => {
+  const [dots, setDots] = useState('');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDots(prevDots => (prevDots.length < 3 ? prevDots + '.' : ''));
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <dialog className={styles.modal}>
+    <dialog className={styles.modal} open>
       <article className={styles.block}>
         <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.loader}>
           <g clipPath="url(#clip0_119_352)">
@@ -42,7 +53,10 @@ export const MainLoader = () => {
             </clipPath>
           </defs>
         </svg>
-        <h2 className={styles.title}>Загрузка видео</h2>
+        <div className={styles.information}>
+          <h2 className={styles.title}>Загрузка видео</h2>
+          <p className={styles.dots}>{dots}</p>
+        </div>
       </article>
     </dialog>
   )

@@ -3,18 +3,15 @@ import { InfoModal } from '@/shared/ui/InfoModal';
 import styles from './ResultContent.module.css';
 import arrow from '@/shared/assets/images/arrow.svg';
 import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
-import { MainLoader } from '@/shared/ui/MainLoader';
 
 
-export const ResultContent = ({ data, link }) => {
+export const ResultContent = ({ data, link, setLoading }) => {
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);
   const [isQualityModalOpen, setQualityModalOpen] = useState(false);
 
   const [quality, setQuality] = useState('high');
   const [isAudio, setAudio] = useState(false);
   const [isSponsorblock, setSponsorBlock] = useState(false);
-
-  const [isLoaderOpen, setLoader] = useState(false);
 
   const openInfoModal = () => {
     setInfoModalOpen(true);
@@ -38,9 +35,9 @@ export const ResultContent = ({ data, link }) => {
   };
 
   const downloadResource = async () => {
-    console.log(link);
     try {
-      setLoader(true);
+      setLoading(true);
+      
       const response = await fetch(
         `http://37.128.205.70:8000/video_audio?url=${link}&quality=${quality}&only_audio=${isAudio}&sponsor_block=${isSponsorblock}`
       );
@@ -76,14 +73,13 @@ export const ResultContent = ({ data, link }) => {
     } catch (error) {
       console.error("Ошибка при получении данных:", error);
     } finally {
-      setLoader(false);
+      setLoading(false);
     }
   };
 
 
   return (
     <>
-      <MainLoader />
       <div className={styles.image_block}>
         <img src={data ? data.preview_url : '#'}
           alt="Картинка результата поиска"
