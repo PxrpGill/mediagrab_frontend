@@ -42,6 +42,22 @@
     @mixin responsive height, 22;
 }
 
+.loader {
+    animation: rotate 1s linear infinite;
+    @mixin responsive width, 24;
+    @mixin responsive height, 24;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 
 @media screen and (max-width: 576px) {
     .form {
