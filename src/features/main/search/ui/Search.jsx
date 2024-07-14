@@ -38,7 +38,7 @@ export const Search = ({ onSearch, setLink, setLinkState, isLink }) => {
       className={styles.form}>
       <input type="text"
         name="query"
-        className={styles.input_link}
+        className={isLink || isLoading ? styles.inputed : styles.input_link}
         placeholder="Вставьте ссылку на видео"
         value={query}
         onChange={(event) => setQuery(event.target.value)}

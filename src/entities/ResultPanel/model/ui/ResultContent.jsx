@@ -3,11 +3,13 @@ import { InfoModal } from '@/shared/ui/InfoModal';
 import styles from './ResultContent.module.css';
 import arrow from '@/shared/assets/images/arrow.svg';
 import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
+import { SponsorModal } from '@/shared/ui/SponsorModal';
 
 
 export const ResultContent = ({ data, link, setLoading }) => {
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);
   const [isQualityModalOpen, setQualityModalOpen] = useState(false);
+  const [isSponsorModalOpen, setSponsorModalOpen] = useState(false);
 
   const [quality, setQuality] = useState('high');
   const [isAudio, setAudio] = useState(false);
@@ -37,7 +39,7 @@ export const ResultContent = ({ data, link, setLoading }) => {
   const downloadResource = async () => {
     try {
       setLoading(true);
-      
+
       const response = await fetch(
         `http://37.128.205.70:8000/video_audio?url=${link}&quality=${quality}&only_audio=${isAudio}&sponsor_block=${isSponsorblock}`
       );
@@ -94,20 +96,24 @@ export const ResultContent = ({ data, link, setLoading }) => {
         <p className={styles.author}>
           {data ? truncateToTwoWords(data.author_name) : 'Произошла ошибка'}
         </p>
-        <label htmlFor="sponsor"
+        <div
           className={styles.checkbox_block}>
           <input type="checkbox" name="sponsor"
             id="sponsor" className={styles.checkbox_sponsor}
             onClick={() => setSponsorBlock(!isSponsorblock)}
           />
-          Sponsorblock
+          <p className={styles.sponsor_block_open_modal}
+            onClick={() => setSponsorModalOpen(!isSponsorModalOpen)}>
+            Sponsorblock
+          </p>
           <button className={styles.open_modal_button}
             onMouseEnter={openInfoModal}
             onMouseLeave={closeInfoModal}>
             i
           </button>
           {isInfoModalOpen && <InfoModal />}
-        </label>
+          {isSponsorModalOpen && <SponsorModal data={data.sponsor_segments} />}
+        </div>
         <div className={styles.button_place}>
           <div className={styles.main_buttons_block}>
             <button type="button"
