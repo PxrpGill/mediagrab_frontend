@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { getVideo, downloadVideo, } from "@/shared/api/requests";
+import { getVideo } from "@/shared/api/requests";
 
 
 class CardStore {
@@ -102,7 +102,9 @@ class CardStore {
         only_audio: this.onlyAudio,
         sponsor_block: this.sponsorBlock
       };
-      const response = await downloadVideo(params);
+      const response = await fetch(
+        `http://37.128.205.70:8000/video_audio?url=${this.videoUrl}&quality=${this.quality}&only_audio=${this.onlyAudio}&sponsor_block=${this.sponsorBlock}`
+      );
       return response;
     } catch (error) {
       runInAction(() => {
