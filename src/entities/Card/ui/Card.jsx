@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './Card.module.css';
+
 import arrow from '@/shared/assets/images/arrow.svg';
 import { InfoModal } from '@/shared/ui/InfoModal/ui/InfoModal';
 import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
@@ -10,7 +11,7 @@ export const Card = ({
   previewUrl, authorName, title,
   sponsorSegments, quality, setQuality,
   onlyAudio, setOnlyAudio, sponsorBlock,
-  setSponsorBlock, isLoadingDownload, children,
+  setSponsorBlock, children,
   truncateWords
 }) => {
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);

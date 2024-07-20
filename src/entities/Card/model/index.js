@@ -7,10 +7,11 @@ class CardStore {
   authorName = '';
   title = '';
   sponsorSegments = [];
+  isGettedData = false;
 
   videoUrl = '';
 
-  quality = '';
+  quality = 'high';
   onlyAudio = false;
   sponsorBlock = false;
 
@@ -56,6 +57,7 @@ class CardStore {
         this.authorName = response.author_name;
         this.title = response.title;
         this.sponsorSegments = response.sponsor_segments;
+        this.isGettedData = true;
       });
     } catch (error) {
       runInAction(() => {
@@ -85,6 +87,7 @@ class CardStore {
     runInAction(() => {
       this.onlyAudio = userAudio;
     });
+    console.log(userAudio);
   }
 
   getVideo = async () => {
@@ -112,7 +115,6 @@ class CardStore {
       })
     }
   }
-
 }
 
 export const cardStore = new CardStore();

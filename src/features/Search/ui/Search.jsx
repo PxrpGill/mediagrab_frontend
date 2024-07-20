@@ -16,7 +16,7 @@ export const Search = observer(() => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await setUrl(query);
+    setUrl(query);
     await getInformation();
   };
 

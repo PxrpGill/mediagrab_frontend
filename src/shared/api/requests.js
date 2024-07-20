@@ -12,7 +12,7 @@ export const downloadVideo = (params) =>
   httpClient.get(
     'video_audio',
     { searchParams: params }
-  ).json();
+  );
 
 
 export const getHistory = (params) =>
