@@ -29,25 +29,29 @@ export const deleteHistory = (params) =>
   );
 
 
-export const getUserInfo = () =>
+export const getUserInfo = (params) =>
   httpClient.get(
-    'authorized/about_user'
+    'authorized/about_user',
+    { json: params }
   ).json();
 
 
-export const register = () =>
+export const register = (params) =>
   httpClient.post(
-    'auth/register'
-  );
+    'auth/register',
+    { json: params }
+  ).json();
 
 
-export const login = () =>
+export const login = (params) =>
   httpClient.post(
-    'auth/login'
-  );
+    'auth/login',
+    { json: params }
+  ).json();
 
 
-export const logout = () =>
+export const logout = (params) =>
   httpClient.post(
-    'auth/logout'
-  );
+    'auth/logout',
+    { json: params }
+  ).json();
