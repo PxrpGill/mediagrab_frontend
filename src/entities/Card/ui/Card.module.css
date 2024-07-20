@@ -1,5 +1,36 @@
 @import url('@/shared/styles/mixins.css');
 
+.block {
+    @mixin responsive width, 587;
+    @mixin responsive height, 202;
+    @mixin responsive padding-top, 30;
+    @mixin responsive padding-right, 40;
+    @mixin responsive padding-bottom, 30;
+    @mixin responsive padding-left, 30;
+    background-color: var(--element-color);
+    @mixin responsive border-radius, 60;
+    @mixin flex-just-align start, center;
+    @mixin responsive gap, 30;
+    animation: 0.9s addElement ease;
+    z-index: 1;
+}
+
+@keyframes addElement {
+    from {
+        transform: translateY(-37%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0%);
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
 .image_block {
     @mixin responsive width, 278;
     @mixin responsive height, 202;
@@ -231,5 +262,18 @@
 
     .checkbox_sponsor:checked {
         @mixin responsive background-size, 13;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .block {
+        @mixin responsive width, 280;
+        @mixin responsive height, 179;
+        @mixin responsive padding-top, 15;
+        @mixin responsive padding-right, 15;
+        @mixin responsive padding-bottom, 15;
+        @mixin responsive padding-left, 15;
+        @mixin responsive border-radius, 30;
+        @mixin responsive gap, 10;
     }
 }

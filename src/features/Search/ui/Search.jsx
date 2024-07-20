@@ -1,51 +1,37 @@
 import styles from './Search.module.css';
 import searchIcon from '@/shared/assets/images/search.svg'
 import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import { cardStore } from '../../../entities/Card';
 
 
-export const Search = ({ onSearch, setLink, setLinkState, isLink }) => {
-  const [isLoading, setLoading] = useState(false);
+export const Search = observer(() => {
   const [query, setQuery] = useState('');
 
-  const handleSumbit = async (event) => {
-    try {
-      setLinkState(false);
-      setLoading(true);
-      event.preventDefault();
-      const query = event.target.elements.query.value;
-      setLink(query);
+  const {
+    isLoadingSearch,
+    getInformation,
+    setUrl
+  } = cardStore;
 
-      const response = await fetch(`http://37.128.205.70:8000/information?url=${query}`);
-      const data = await response.json();
-
-      onSearch(data);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-      setLinkState(true);
-    }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setUrl(query);
+    await getInformation();
   };
 
-  const clearForm = (event) => {
-    event.preventDefault();
-    setQuery('');
-    setLinkState(false);
-  }
-
   return (
-    <form onSubmit={isLink ? clearForm : handleSumbit} action="GET"
-      className={styles.form}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <input type="text"
-        name="query"
-        className={isLink || isLoading ? styles.inputed : styles.input_link}
-        placeholder="Вставьте ссылку на видео"
         value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        disabled={isLink || isLoading} />
+        onChange={(e) => setQuery(e.target.value)}
+        name="query"
+        className={query || isLoadingSearch ? styles.inputed : styles.input_link}
+        placeholder="Вставьте ссылку на видео"
+      />
       <button type="submit"
         className={styles.submit_button}>
-        {isLoading ? (
+        {isLoadingSearch ? (
           <svg width="24" height="24" viewBox="0 0 24 24"
             fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.loader}>
             <path d="M12 22C10.6333 22 9.34167 21.7375 8.125 21.2125C6.90833 20.6875 5.84583 19.9708 4.9375 
@@ -61,17 +47,11 @@ export const Search = ({ onSearch, setLink, setLinkState, isLink }) => {
             21.2125C14.6792 21.7375 13.3833 22 12 22Z" fill="#D5D4DA" />
           </svg>
         ) : (
-          isLink ? (
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.cross}>
-              <path d="M2.2 22L0 19.8L8.8 11L0 2.2L2.2 0L11 8.8L19.8 0L22 2.2L13.2 11L22 19.8L19.8 22L11 13.2L2.2 22Z" fill="#D7D6DC" />
-            </svg>
-          ) : (
-            <img src={searchIcon}
-              alt="Иконка поиска"
-              className={styles.searchIcon} />
-          )
+          <img src={searchIcon}
+            alt="Иконка поиска"
+            className={styles.searchIcon} />
         )}
       </button>
     </form>
   );
-}
+});

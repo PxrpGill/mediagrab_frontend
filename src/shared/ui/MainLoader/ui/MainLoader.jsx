@@ -2,7 +2,7 @@ import styles from './MainLoader.module.css';
 import { useEffect, useState } from 'react';
 
 
-export const MainLoader = () => {
+export const MainLoader = ({ isAudio }) => {
   const [dots, setDots] = useState('');
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export const MainLoader = () => {
           </defs>
         </svg>
         <div className={styles.information}>
-          <h2 className={styles.title}>Загрузка видео</h2>
+          <h2 className={styles.title}>Загрузка {isAudio ? 'аудио' : 'видео'}</h2>
           <p className={styles.dots}>{dots}</p>
         </div>
       </article>
