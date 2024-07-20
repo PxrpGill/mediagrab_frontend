@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { MainPage } from '@/pages/MainPage'
+import { App } from './app/App';
 import '@/shared/styles/reset_style.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <MainPage />
+    <App />
   </React.StrictMode>,
 )
