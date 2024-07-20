@@ -6,7 +6,7 @@ import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
 import { SponsorModal } from '@/shared/ui/SponsorModal';
 
 
-export const ResultContent = ({ data, link, setLoading }) => {
+export const CardContent = ({ data, link, setLoading }) => {
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);
   const [isQualityModalOpen, setQualityModalOpen] = useState(false);
   const [isSponsorModalOpen, setSponsorModalOpen] = useState(false);

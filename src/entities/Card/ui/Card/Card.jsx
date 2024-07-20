@@ -1,7 +1,7 @@
-import { ResultContent } from "../model";
+import { ResultContent } from "../../model";
 import styles from './ResultPanel.module.css';
 
-export const ResultPanel = ({ data, link, setLoading }) => {
+export const Card = ({ data, link, setLoading }) => {
   return (
     <section className={styles.block}>
       <h3 className={styles.hidden}>
