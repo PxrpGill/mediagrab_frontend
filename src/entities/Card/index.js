@@ -1,1 +1,2 @@
-export { ResultPanel } from './ui/ResultPanel';
+export { cardStore } from './model/index';
+export { Card } from './ui/Card';

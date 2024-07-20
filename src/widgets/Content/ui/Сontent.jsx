@@ -1,12 +1,16 @@
-import styles from './Сontent.module.css';
-import { MainContent } from '@/features/main/MainContent';
+import { observer } from 'mobx-react-lite';
 
-export const Content = () => {
+import styles from './Сontent.module.css';
+import { Search } from '@/features/Search';
+import { Download } from '@/features/Download/ui/Download';
+
+export const Content = observer(() => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <MainContent />
+        <Search />
+        <Download />
       </div>
     </main>
-  )
-}
+  );
+});

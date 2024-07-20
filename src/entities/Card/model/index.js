@@ -20,8 +20,18 @@ class CardStore {
   isError = false;
   Error = 'Упс... Произошла ошибка с нашей стороны. Повторите попытку позднее';
 
+  maxLengthWord = 3;
+
   constructor() {
     makeAutoObservable(this);
+  }
+
+  truncateWords = (string) => {
+    const words = string.split(' ');
+    if (words.length > this.maxLengthWord) {
+      return words.slice(0, this.maxLengthWord).join(' ') + '...';
+    }
+    return string;
   }
 
   setUrl = (url) => {
@@ -39,7 +49,7 @@ class CardStore {
       const params = {
         url: this.videoUrl
       };
-      const response = getVideo(params);
+      const response = await getVideo(params);
 
       runInAction(() => {
         this.previewUrl = response.preview_url;
@@ -73,7 +83,7 @@ class CardStore {
 
   setOnlyAudio = (userAudio) => {
     runInAction(() => {
-      this.setOnlyAudio = userAudio;
+      this.onlyAudio = userAudio;
     });
   }
 
@@ -89,7 +99,7 @@ class CardStore {
         only_audio: this.onlyAudio,
         sponsor_block: this.sponsorBlock
       };
-      const response = downloadVideo(params);
+      const response = await downloadVideo(params);
       return response;
     } catch (error) {
       runInAction(() => {
