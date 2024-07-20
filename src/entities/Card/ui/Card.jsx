@@ -1,6 +1,10 @@
-import styles from './Card.module.css';
 import { useState } from 'react';
+import styles from './Card.module.css';
 import arrow from '@/shared/assets/images/arrow.svg';
+import { InfoModal } from '@/shared/ui/InfoModal/ui/InfoModal';
+import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
+import { SponsorModal } from '@/shared/ui/SponsorModal/ui/SponsorModal';
+
 
 export const Card = ({
   previewUrl, authorName, title,
@@ -59,7 +63,7 @@ export const Card = ({
                 alt="Изображение стрелки выпадающего списка" />
             </button>
             {isQualityModalOpen && <QualityModal setQuality={setQuality}
-              setQualityModalOpen={setQualityModalOpen}
+              setQualityModalOpen={setQualityModalOpen} quality={quality}
             />}
           </div>
           <label htmlFor="audio"
