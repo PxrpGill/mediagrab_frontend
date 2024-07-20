@@ -23,7 +23,7 @@ export const Download = observer(() => {
 
       // Получаем имя файла из заголовка Content-Disposition или устанавливаем дефолтное имя
       const contentDisposition = response.headers.get('content-disposition');
-      let filename = 'downloaded_file';
+      let filename = title;
 
       if (contentDisposition && contentDisposition.indexOf('filename=') !== -1) {
         filename = contentDisposition.split('filename=')[1].replace(/['"]/g, '');
