@@ -18,6 +18,11 @@ class CardStore {
   isLoadingSearch = false;
   isLoadingDownload = false;
 
+  isErrorInput = false;
+  ErrorInput = 'Упс... Произошла ошибка с нашей стороны. Повторите попытку позднее';
+
+  isErrorValidation = false;
+
   isError = false;
   Error = 'Упс... Произошла ошибка с нашей стороны. Повторите попытку позднее';
 
@@ -61,7 +66,7 @@ class CardStore {
       });
     } catch (error) {
       runInAction(() => {
-        this.isError = true;
+        this.isErrorInput = true;
       })
       console.log('Произошла ошибка: ', error);
     } finally {
@@ -87,7 +92,6 @@ class CardStore {
     runInAction(() => {
       this.onlyAudio = userAudio;
     });
-    console.log(userAudio);
   }
 
   getVideo = async () => {
@@ -96,12 +100,6 @@ class CardStore {
         this.isLoadingDownload = true;
       });
 
-      const params = {
-        url: this.videoUrl,
-        quality: this.quality,
-        only_audio: this.onlyAudio,
-        sponsor_block: this.sponsorBlock
-      };
       const response = await fetch(
         `http://37.128.205.70:8000/video_audio?url=${this.videoUrl}&quality=${this.quality}&only_audio=${this.onlyAudio}&sponsor_block=${this.sponsorBlock}`
       );
@@ -116,6 +114,18 @@ class CardStore {
         this.isLoadingDownload = false;
       })
     }
+  }
+
+  resetInformation = () => {
+    runInAction(() => {
+      this.isGettedData = false;
+    });
+  }
+
+  resetErrorInput = () => {
+    runInAction(() => {
+      this.isErrorInput = false;
+    });
   }
 }
 

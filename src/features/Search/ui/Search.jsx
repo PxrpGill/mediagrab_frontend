@@ -1,8 +1,9 @@
 import styles from './Search.module.css';
 import searchIcon from '@/shared/assets/images/search.svg'
-import { useState } from 'react';
+import cross from '@/shared/assets/images/cross.png';
+import { useState, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import { cardStore } from '../../../entities/Card';
+import { cardStore } from '@/entities/Card';
 
 
 export const Search = observer(() => {
@@ -11,30 +12,50 @@ export const Search = observer(() => {
   const {
     isLoadingSearch,
     getInformation,
-    setUrl
+    setUrl, resetInformation,
+    isGettedData, isErrorInput, resetErrorInput
   } = cardStore;
 
   const handleSubmit = async (event) => {
+
     event.preventDefault();
     setUrl(query);
     await getInformation();
   };
 
+  useEffect(() => {
+    if (isErrorInput) {
+      setQuery('Данный сервис не поддерживается.')
+      resetInformation();
+    }
+  }, [isErrorInput]);
+
+  const resetQuery = (event) => {
+    event.preventDefault();
+    setQuery('');
+    resetErrorInput();
+    resetInformation();
+  }
+
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={query == 'Данный сервис не поддерживается.' || isGettedData ? resetQuery : handleSubmit}
+      className={styles.form}>
       <input type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         name="query"
-        className={query || isLoadingSearch ? styles.inputed : styles.input_link}
-        placeholder="Вставьте ссылку на видео"
+        className={isLoadingSearch || isGettedData ? styles.inputed : styles.input_link}
+        placeholder='Вставьте ссылку на видео'
+        disabled={isLoadingSearch || isGettedData || isErrorInput ? true : false}
       />
       <button type="submit"
-        className={styles.submit_button}>
-        {isLoadingSearch ? (
-          <svg width="24" height="24" viewBox="0 0 24 24"
-            fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.loader}>
-            <path d="M12 22C10.6333 22 9.34167 21.7375 8.125 21.2125C6.90833 20.6875 5.84583 19.9708 4.9375 
+        className={isErrorInput ? styles.error_button : styles.submit_button}
+        disabled={isLoadingSearch ? true : false}>
+        {
+          isLoadingSearch ? (
+            <svg width="24" height="24" viewBox="0 0 24 24"
+              fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.loader}>
+              <path d="M12 22C10.6333 22 9.34167 21.7375 8.125 21.2125C6.90833 20.6875 5.84583 19.9708 4.9375 
             19.0625C4.02917 18.1542 3.3125 17.0917 2.7875 15.875C2.2625 14.6583 2 13.3667 2 12C2 10.6167 2.2625 
             9.32083 2.7875 8.1125C3.3125 6.90417 4.02917 5.84583 4.9375 4.9375C5.84583 4.02917 6.90833 3.3125 
             8.125 2.7875C9.34167 2.2625 10.6333 2 12 2C12.2833 2 12.5208 2.09583 12.7125 2.2875C12.9042 2.47917 
@@ -45,12 +66,23 @@ export const Search = observer(() => {
             11 21.5208 11.0958 21.7125 11.2875C21.9042 11.4792 22 11.7167 22 12C22 13.3667 21.7375 14.6583 21.2125 
             15.875C20.6875 17.0917 19.9708 18.1542 19.0625 19.0625C18.1542 19.9708 17.0958 20.6875 15.8875 
             21.2125C14.6792 21.7375 13.3833 22 12 22Z" fill="#D5D4DA" />
-          </svg>
-        ) : (
-          <img src={searchIcon}
-            alt="Иконка поиска"
-            className={styles.searchIcon} />
-        )}
+            </svg>
+          ) : (
+            query == 'Данный сервис не поддерживается.' ?
+              (
+                <img src={cross}
+                  alt="Иконка поиска"
+                  className={styles.cross} />
+              ) : (
+                isGettedData ? (
+                  <img src={cross}
+                    alt="Иконка поиска"
+                    className={styles.cross} />
+                ) : (
+                  <img src={searchIcon} alt="Иконка поиска" />
+                )
+              )
+          )}
       </button>
     </form>
   );

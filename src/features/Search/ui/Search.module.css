@@ -65,6 +65,18 @@
     cursor: pointer;
 }
 
+.error_button {
+    @mixin responsive width, 60;
+    @mixin responsive height, 86;
+    margin: 0;
+    appearance: none;
+    border: none;
+    border-radius: 0px 8.9vw 8.9vw 0px;
+    @mixin flex-just-align center, center;
+    background-color: #530D0D;
+    cursor: pointer;
+}
+
 .searchIcon {
     @mixin responsive width, 22;
     @mixin responsive height, 22;
