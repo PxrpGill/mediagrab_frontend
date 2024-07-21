@@ -70,14 +70,22 @@ export const Search = observer(() => {
           ) : (
             query == 'Данный сервис не поддерживается.' ?
               (
-                <img src={cross}
-                  alt="Иконка поиска"
-                  className={styles.cross} />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg" className={styles.cross}>
+                  <path d="M2.53366 19.3334L0.666992 17.4667L8.13366 10.0001L0.666992 
+                  2.53341L2.53366 0.666748L10.0003 8.13341L17.467 0.666748L19.3337 
+                  2.53341L11.867 10.0001L19.3337 17.4667L17.467 19.3334L10.0003 
+                  11.8667L2.53366 19.3334Z" fill="white" />
+                </svg>
               ) : (
                 isGettedData ? (
-                  <img src={cross}
-                    alt="Иконка поиска"
-                    className={styles.cross} />
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" className={styles.cross}>
+                    <path d="M2.53366 19.3334L0.666992 17.4667L8.13366 10.0001L0.666992 
+                    2.53341L2.53366 0.666748L10.0003 8.13341L17.467 0.666748L19.3337 
+                    2.53341L11.867 10.0001L19.3337 17.4667L17.467 19.3334L10.0003 
+                    11.8667L2.53366 19.3334Z" fill="white" />
+                  </svg>
                 ) : (
                   <img src={searchIcon} alt="Иконка поиска" />
                 )
