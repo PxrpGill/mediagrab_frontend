@@ -3,11 +3,20 @@
 
 
 .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     @mixin responsive height, 80;
-    @mixin flex-just-align center, center;
-    @mixin responsive gap, 2;
     background-color: var(--header-background-color);
+}
+
+.logoPlace {
+    @mixin flex-just-align center, center;
+    grid-column: 2;
+}
+
+.authPlace {
+    @mixin flex-just-align center, center;
 }
 
 .logo {
