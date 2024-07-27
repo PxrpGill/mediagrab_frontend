@@ -1,0 +1,14 @@
+@import url('@/shared/styles/mixins.css');
+
+
+.modal {
+    @mixin responsive width, 324;
+    left: -230%;
+    top: 110%;
+    @mixin responsive border-radius, 15;
+    border: 0;
+    @mixin text-ser 14, 700, 1.5;
+    color: white;
+    background-color: #6B6B6C;
+    box-shadow: 0px 0px 0.3vw black;
+}

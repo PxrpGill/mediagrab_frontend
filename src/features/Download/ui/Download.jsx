@@ -10,7 +10,8 @@ export const Download = observer(() => {
     quality, setQuality,
     onlyAudio, setOnlyAudio,
     sponsorBlock, setSponsorBlock,
-    truncateWords, getVideo, videoUrl
+    truncateWords, getVideo,
+    getFunctionalInformation
   } = cardStore;
 
   const downloadResource = async () => {
@@ -56,6 +57,7 @@ export const Download = observer(() => {
       sponsorBlock={sponsorBlock}
       setSponsorBlock={setSponsorBlock}
       truncateWords={truncateWords}
+      getFunctionalInformation={getFunctionalInformation}
     >
       <button type="button"
         className={styles.download_button}

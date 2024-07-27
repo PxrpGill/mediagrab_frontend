@@ -1,13 +1,18 @@
 import styles from './QualityModal.module.css';
 
-export const QualityModal = ({ setQuality, setQualityModalOpen, quality }) => {
+
+export const QualityModal = (
+  { setQuality, setQualityModalOpen, quality, isQualityModalOpen }
+) => {
   const handleClick = (value) => {
-    setQualityModalOpen(false);
+    setTimeout(() => {
+      setQualityModalOpen(false);
+    }, 500);
     setQuality(value);
-  }
+  };
 
   return (
-    <dialog className={styles.modal} open>
+    <dialog className={`${styles.modal} ${isQualityModalOpen ? styles.open : styles.closing}`} open>
       <article className={styles.block}>
         <button className={quality == 'lowest' ? styles.button_selected : styles.button} value="lowest"
           onClick={() => handleClick('lowest')}>
@@ -56,5 +61,5 @@ export const QualityModal = ({ setQuality, setQualityModalOpen, quality }) => {
         </button>
       </article>
     </dialog>
-  )
-}
+  );
+};

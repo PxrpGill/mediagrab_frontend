@@ -2,18 +2,19 @@
 
 .dialog {
     border: none;
-    @mixin responsive width, 324;
-    @mixin responsive height, 144;
+    @mixin responsive width, 175;
     @mixin responsive padding-top, 10;
     @mixin responsive padding-bottom, 10;
     @mixin responsive padding-left, 16;
     @mixin responsive padding-right, 16;
-    left: 105%;
-    top: 20%;
+    left: 40%;
+    top: 110%;
     background-color: var(--modal-color);
-    @mixin responsive border-radius, 30;
+    @mixin responsive border-radius, 15;
     animation: 0.5s openModal ease;
+    padding: 0;
     overflow: hidden;
+    box-shadow: 0px 0px 0.2vw black;
 }
 
 @keyframes openModal {
@@ -26,15 +27,39 @@
     }
 }
 
-.about_text {
-    @mixin text-ser 14, 700, 1.7;
-    @mixin responsive word-spacing, 1;
-    color: var(--title-text-color);
-    @mixin responsive width, 292;
+.block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .title {
-    @mixin text-ser 14, 300, 1.5;
-    color: var(--info-yt-color);
-    @mixin responsive width, 292;
+    width: 100%;
+    @mixin responsive height, 32;
+    @mixin flex-just-align center, center;
+    background-color: #222222;
+}
+
+.titleText {
+    @mixin text-ser 15, 400, 1;
+    color: white;
+}
+
+.button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    @mixin responsive padding-left, 16;
+    width: 100%;
+    @mixin responsive height, 32;
+    background-color: #3C3C3C;
+    border: none;
+    @mixin text-ser 14, 400, 1;
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #666666;
 }

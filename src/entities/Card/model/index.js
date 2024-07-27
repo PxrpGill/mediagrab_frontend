@@ -27,6 +27,7 @@ class CardStore {
   Error = 'Упс... Произошла ошибка с нашей стороны. Повторите попытку позднее';
 
   maxLengthWord = 3;
+  infoData = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -131,8 +132,10 @@ class CardStore {
   getFunctionalInformation = async () => {
     try {
       const response = await fetch('https://api.mediagrab.ru/help');
-      const data = response.json();
-      return data;
+      const data = await response.json();
+      runInAction(() => {
+        this.infoData = data;
+      });
     } catch (error) {
       console.log('Произошла ошибка получения информации о функциях');
     }

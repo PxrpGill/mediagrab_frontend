@@ -3,24 +3,40 @@
 
 .modal {
     @mixin responsive width, 240;
-    
     padding: 0;
     border: none;
     background: none;
     @mixin responsive top, 30;
-    animation: 0.5s openModal ease;
     overflow: hidden;
     @mixin responsive border-radius, 15;
     box-shadow: 0px 0px 4px black;
 }
 
+.modal.open {
+    animation: openModal 0.5s ease;
+}
+
+.modal.closing {
+    animation: closeModal 0.5s ease;
+}
+
 @keyframes openModal {
     from {
-        height: 0;
+        opacity: 0;
     }
 
     to {
-        @mixin responsive height, 168;
+        opacity: 1;
+    }
+}
+
+@keyframes closeModal {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }
 

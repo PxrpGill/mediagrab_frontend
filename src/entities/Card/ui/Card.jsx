@@ -1,22 +1,34 @@
 import { useState } from 'react';
 import styles from './Card.module.css';
+import { observer } from 'mobx-react-lite';
 
 import arrow from '@/shared/assets/images/arrow.svg';
 import { InfoModal } from '@/shared/ui/InfoModal/ui/InfoModal';
+import { InformationModal } from '../../../shared/ui/InformationModal';
 import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
 import { SponsorModal } from '@/shared/ui/SponsorModal/ui/SponsorModal';
+import { cardStore } from '../model/index';
 
 
-export const Card = ({
+export const Card = observer(({
   previewUrl, authorName, title,
   sponsorSegments, quality, setQuality,
   onlyAudio, setOnlyAudio, sponsorBlock,
   setSponsorBlock, children,
-  truncateWords
+  truncateWords, getFunctionalInformation
 }) => {
+  const { infoData } = cardStore;
   const [isInfoModalOpen, setInfoModalOpen] = useState(false);
+  const [isInforamtionModalOpen, setInforamtionModalOpen] = useState(false);
   const [isSponsorModalOpen, setSponsorModalOpen] = useState(false);
   const [isQualityModalOpen, setQualityModalOpen] = useState(false);
+  const [indexInfo, setIndexInfo] = useState(-1);
+
+  const handleInfoClick = () => {
+    getFunctionalInformation();
+    console.log(infoData);
+    setInfoModalOpen(!isInfoModalOpen);
+  };
 
   return (
     <section className={styles.block}>
@@ -66,7 +78,7 @@ export const Card = ({
               <img src={arrow}
                 alt="Изображение стрелки выпадающего списка" />
             </button>
-            <button className={styles.info}>
+            <button className={styles.info} onClick={handleInfoClick}>
               <svg viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.infoIcon}>
                 <g clipPath="url(#clip0_276_359)">
                   <path className={styles.infoIcon}
@@ -81,12 +93,27 @@ export const Card = ({
             </button>
             {
               isQualityModalOpen &&
-              <QualityModal setQuality={setQuality}
-                setQualityModalOpen={setQualityModalOpen} quality={quality} />
+              <QualityModal setQuality={setQuality} quality={quality}
+                setQualityModalOpen={setQualityModalOpen}
+                isQualityModalOpen={isQualityModalOpen} />
+            }
+            {
+              isInfoModalOpen &&
+              <InfoModal data={infoData}
+                setIndexInfo={setIndexInfo}
+                setInforamtionModalOpen={setInforamtionModalOpen}
+              />
+            }
+            {
+              isInforamtionModalOpen &&
+              indexInfo != 1 &&
+              <InformationModal indexInfo={indexInfo}
+                data={infoData}
+              />
             }
           </div>
         </div>
       </div>
     </section>
   );
-}
+});
