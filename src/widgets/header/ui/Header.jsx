@@ -5,8 +5,8 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <img className={styles.logo} src={multiLogo}
-        alt="Логотип Multigrab" draggable="false" />
-      <h1 className={styles.title}>MultiGrab</h1>
+        alt="Логотип Mediagrab" draggable="false" />
+      <h1 className={styles.title}>MediaGrab</h1>
     </header>
   )
 }

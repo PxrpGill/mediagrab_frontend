@@ -110,6 +110,14 @@
         margin-top: 20vh;
     }
 
+    .inputed {
+        @mixin responsive width, 220;
+        @mixin responsive height, 65;
+        @mixin text-ser 15, 400, 1;
+        padding: 0;
+        @mixin responsive padding-left, 26;
+    }
+
     .input_link {
         @mixin responsive width, 220;
         @mixin responsive height, 65;
@@ -119,6 +127,11 @@
     }
 
     .submit_button {
+        @mixin responsive width, 60;
+        @mixin responsive height, 65;
+    }
+
+    .error_button {
         @mixin responsive width, 60;
         @mixin responsive height, 65;
     }

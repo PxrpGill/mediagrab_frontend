@@ -21,7 +21,7 @@ export const Download = observer(() => {
       }
 
       const contentDisposition = response.headers.get('content-disposition');
-      let filename = title;
+      let filename = `${authorName} - ${title}`;
 
       if (contentDisposition && contentDisposition.indexOf('filename=') !== -1) {
         filename = contentDisposition.split('filename=')[1].replace(/['"]/g, '');

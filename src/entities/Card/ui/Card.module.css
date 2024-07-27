@@ -51,19 +51,18 @@
 
 .result_block {
     @mixin flex-just-align start, start;
+    @mixin responsive gap, 15;
     flex-direction: column;
     height: 100%;
 }
 
 .title {
     @mixin text-ser 24, 500, 1;
-    @mixin responsive margin-bottom, 15;
     color: var(--title-text-color);
 }
 
 .author {
     @mixin text-ser 20, 400, 1;
-    @mixin responsive margin-bottom, 49;
     color: var(--title-text-color);
 }
 
@@ -101,6 +100,11 @@
 .sponsor_block_open_modal {
     cursor: pointer;
     transition: .5s;
+    @mixin text-ser 14, 400, 1;
+    color: var(--title-text-color);
+    background: none;
+    padding: 0;
+    border: none;
 }
 
 .sponsor_block_open_modal:hover {
@@ -144,7 +148,7 @@
 .audio_check_checkbox_place {
     @mixin flex-just-align start, center;
     @mixin responsive gap, 6;
-    @mixin text-ser 16, 400, 1;
+    @mixin text-ser 14, 400, 1;
     color: var(--title-text-color);
 }
 
@@ -174,6 +178,21 @@
     @mixin responsive border-radius, 60;
     cursor: pointer;
     @mixin text-ser 14, 400, 1;
+}
+
+.info {
+    @mixin responsive width, 45;
+    @mixin responsive height, 33;
+    @mixin responsive border-radius, 360;
+    border: 0;
+    background-color: var(--buttons-color);
+    @mixin flex-just-align center, center;
+    cursor: pointer;
+}
+
+.infoIcon {
+    @mixin responsive width, 20;
+    @mixin responsive height, 20;
 }
 
 @media screen and (max-width: 992px) {

@@ -101,7 +101,7 @@ class CardStore {
       });
 
       const response = await fetch(
-        `http://37.128.205.70:8000/video_audio?url=${this.videoUrl}&quality=${this.quality}&only_audio=${this.onlyAudio}&sponsor_block=${this.sponsorBlock}`
+        `https://api.mediagrab.ru/video_audio?url=${this.videoUrl}&quality=${this.quality}&only_audio=${this.onlyAudio}&sponsor_block=${this.sponsorBlock}`
       );
       return response;
     } catch (error) {
@@ -126,6 +126,16 @@ class CardStore {
     runInAction(() => {
       this.isErrorInput = false;
     });
+  }
+
+  getFunctionalInformation = async () => {
+    try {
+      const response = await fetch('https://api.mediagrab.ru/help');
+      const data = response.json();
+      return data;
+    } catch (error) {
+      console.log('Произошла ошибка получения информации о функциях');
+    }
   }
 }
 

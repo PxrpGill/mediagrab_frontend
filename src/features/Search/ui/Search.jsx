@@ -87,7 +87,7 @@ export const Search = observer(() => {
                     11.8667L2.53366 19.3334Z" fill="white" />
                   </svg>
                 ) : (
-                  <img src={searchIcon} alt="Иконка поиска" />
+                  <img src={searchIcon} alt="Иконка поиска" className={styles.searchIcon} />
                 )
               )
           )}
