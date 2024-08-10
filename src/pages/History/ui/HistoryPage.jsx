@@ -1,5 +1,3 @@
 export const HistoryPage = () => {
-  return (
-    <h1>История скачиваний</h1>
-  );
-}
+  return <h1>История скачиваний</h1>;
+};

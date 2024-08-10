@@ -1,13 +1,13 @@
-import { useState } from "react";
-import styles from "./Card.module.css";
-import { observer } from "mobx-react-lite";
+import { useState } from 'react';
+import styles from './Card.module.css';
+import { observer } from 'mobx-react-lite';
 
-import arrow from "@/shared/assets/images/arrow.svg";
-import { InfoModal } from "@/shared/ui/InfoModal/ui/InfoModal";
-import { InformationModal } from "../../../shared/ui/InformationModal";
-import { QualityModal } from "@/shared/ui/QualityModal/ui/QualityModal";
-import { SponsorModal } from "@/shared/ui/SponsorModal/ui/SponsorModal";
-import { cardStore } from "../model/index";
+import arrow from '@/shared/assets/images/arrow.svg';
+import { InfoModal } from '@/shared/ui/InfoModal/ui/InfoModal';
+import { InformationModal } from '../../../shared/ui/InformationModal';
+import { QualityModal } from '@/shared/ui/QualityModal/ui/QualityModal';
+import { SponsorModal } from '@/shared/ui/SponsorModal/ui/SponsorModal';
+import { cardStore } from '../model/index';
 
 export const Card = observer(
   ({
@@ -142,5 +142,5 @@ export const Card = observer(
         </div>
       </section>
     );
-  }
+  },
 );

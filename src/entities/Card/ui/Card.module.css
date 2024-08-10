@@ -1,298 +1,298 @@
 @import url('@/shared/styles/mixins.css');
 
 .block {
-    @mixin responsive width, 587;
-    @mixin responsive height, 202;
-    @mixin responsive padding-top, 30;
-    @mixin responsive padding-right, 40;
-    @mixin responsive padding-bottom, 30;
-    @mixin responsive padding-left, 30;
-    background-color: var(--element-color);
-    @mixin responsive border-radius, 60;
-    @mixin flex-just-align start, center;
-    @mixin responsive gap, 30;
-    animation: 0.9s addElement ease;
-    z-index: 1;
+  @mixin responsive width, 587;
+  @mixin responsive height, 202;
+  @mixin responsive padding-top, 30;
+  @mixin responsive padding-right, 40;
+  @mixin responsive padding-bottom, 30;
+  @mixin responsive padding-left, 30;
+  background-color: var(--element-color);
+  @mixin responsive border-radius, 60;
+  @mixin flex-just-align start, center;
+  @mixin responsive gap, 30;
+  animation: 0.9s addElement ease;
+  z-index: 1;
 }
 
 @keyframes addElement {
-    from {
-        transform: translateY(-37%);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(-37%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translate(0%);
-        opacity: 1;
-    }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .image_block {
-    @mixin responsive width, 278;
-    @mixin responsive height, 202;
-    @mixin responsive border-radius, 29;
-    background-color: var(--main-background-color);
-    overflow: hidden;
-    @mixin flex-just-align center, center;
+  @mixin responsive width, 278;
+  @mixin responsive height, 202;
+  @mixin responsive border-radius, 29;
+  background-color: var(--main-background-color);
+  overflow: hidden;
+  @mixin flex-just-align center, center;
 }
 
 .image {
-    width: 100%;
-    height: 100%;
-    @mixin text-ser 20, 700, 1;
-    color: var(--title-text-color);
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 100%;
+  @mixin text-ser 20, 700, 1;
+  color: var(--title-text-color);
+  object-fit: cover;
+  object-position: center;
 }
 
 .result_block {
-    @mixin flex-just-align start, start;
-    @mixin responsive gap, 15;
-    flex-direction: column;
-    height: 100%;
+  @mixin flex-just-align start, start;
+  @mixin responsive gap, 15;
+  flex-direction: column;
+  height: 100%;
 }
 
 .title {
-    @mixin text-ser 24, 500, 1;
-    color: var(--title-text-color);
+  @mixin text-ser 24, 500, 1;
+  color: var(--title-text-color);
 }
 
 .author {
-    @mixin text-ser 20, 400, 1;
-    color: var(--title-text-color);
+  @mixin text-ser 20, 400, 1;
+  color: var(--title-text-color);
 }
 
 .checkbox_block {
-    @mixin text-ser 16, 400, 1;
-    color: var(--title-text-color);
-    @mixin flex-just-align start, center;
-    @mixin responsive gap, 6;
-    @mixin responsive margin-bottom, 10;
-    position: relative;
+  @mixin text-ser 16, 400, 1;
+  color: var(--title-text-color);
+  @mixin flex-just-align start, center;
+  @mixin responsive gap, 6;
+  @mixin responsive margin-bottom, 10;
+  position: relative;
 }
 
 .checkbox_sponsor {
-    appearance: none;
-    @mixin responsive width, 32;
-    @mixin responsive height, 32;
-    background: var(--buttons-color);
-    @mixin responsive border-radius, 60;
-    cursor: pointer;
+  appearance: none;
+  @mixin responsive width, 32;
+  @mixin responsive height, 32;
+  background: var(--buttons-color);
+  @mixin responsive border-radius, 60;
+  cursor: pointer;
 }
 
 .checkbox_sponsor:checked {
-    background-image: url('@/shared/assets/images/check.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    @mixin responsive background-size, 16;
+  background-image: url('@/shared/assets/images/check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  @mixin responsive background-size, 16;
 }
 
 .main_buttons_block {
-    overflow: visible;
-    position: relative;
-    display: flex;
+  overflow: visible;
+  position: relative;
+  display: flex;
 }
 
 .sponsor_block_open_modal {
-    cursor: pointer;
-    transition: .5s;
-    @mixin text-ser 14, 400, 1;
-    color: var(--title-text-color);
-    background: none;
-    padding: 0;
-    border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  @mixin text-ser 14, 400, 1;
+  color: var(--title-text-color);
+  background: none;
+  padding: 0;
+  border: none;
 }
 
 .sponsor_block_open_modal:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .button_place {
-    @mixin flex-just-align start, center;
+  @mixin flex-just-align start, center;
 }
 
 .audio_check_checkbox_place {
-    @mixin flex-just-align start, center;
+  @mixin flex-just-align start, center;
 }
 
 .download_button {
-    @mixin responsive width, 83;
-    @mixin responsive height, 33;
-    @mixin text-ser 14, 700, 1;
-    border-radius: 2.1vw 0px 0px 2.1vw;
-    border: none;
-    background-color: var(--buttons-color);
-    color: #fff;
-    cursor: pointer;
+  @mixin responsive width, 83;
+  @mixin responsive height, 33;
+  @mixin text-ser 14, 700, 1;
+  border-radius: 2.1vw 0px 0px 2.1vw;
+  border: none;
+  background-color: var(--buttons-color);
+  color: #fff;
+  cursor: pointer;
 }
 
 .drop_list_button {
-    @mixin flex-just-align center, center;
-    @mixin responsive width, 33;
-    @mixin responsive height, 33;
-    border-radius: 0px 2.1vw 2.1vw 0px;
-    background-color: #2B2B2B;
-    border: none;
-    cursor: pointer;
-    @mixin responsive margin-right, 10;
+  @mixin flex-just-align center, center;
+  @mixin responsive width, 33;
+  @mixin responsive height, 33;
+  border-radius: 0px 2.1vw 2.1vw 0px;
+  background-color: #2b2b2b;
+  border: none;
+  cursor: pointer;
+  @mixin responsive margin-right, 10;
 
-    >img {
-        @mixin responsive width, 15;
-    }
+  > img {
+    @mixin responsive width, 15;
+  }
 }
 
 .audio_check_checkbox_place {
-    @mixin flex-just-align start, center;
-    @mixin responsive gap, 6;
-    @mixin text-ser 14, 400, 1;
-    color: var(--title-text-color);
+  @mixin flex-just-align start, center;
+  @mixin responsive gap, 6;
+  @mixin text-ser 14, 400, 1;
+  color: var(--title-text-color);
 }
 
 .audio_check_checkbox {
-    appearance: none;
-    background: var(--buttons-color);
-    @mixin responsive width, 32;
-    @mixin responsive height, 32;
-    @mixin responsive border-radius, 60;
-    cursor: pointer;
+  appearance: none;
+  background: var(--buttons-color);
+  @mixin responsive width, 32;
+  @mixin responsive height, 32;
+  @mixin responsive border-radius, 60;
+  cursor: pointer;
 }
 
 .audio_check_checkbox:checked {
-    background-image: url('@/shared/assets/images/check.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    @mixin responsive background-size, 16;
+  background-image: url('@/shared/assets/images/check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  @mixin responsive background-size, 16;
 }
 
 .open_modal_button {
-    @mixin responsive width, 24;
-    @mixin responsive height, 24;
-    border: 2px solid var(--info-color);
-    background: none;
-    color: var(--info-color);
-    @mixin responsive border-radius, 60;
-    cursor: pointer;
-    @mixin text-ser 14, 400, 1;
+  @mixin responsive width, 24;
+  @mixin responsive height, 24;
+  border: 2px solid var(--info-color);
+  background: none;
+  color: var(--info-color);
+  @mixin responsive border-radius, 60;
+  cursor: pointer;
+  @mixin text-ser 14, 400, 1;
 }
 
 .info {
-    @mixin responsive width, 45;
-    @mixin responsive height, 33;
-    @mixin responsive border-radius, 360;
-    border: 0;
-    background-color: var(--buttons-color);
-    @mixin flex-just-align center, center;
-    cursor: pointer;
+  @mixin responsive width, 45;
+  @mixin responsive height, 33;
+  @mixin responsive border-radius, 360;
+  border: 0;
+  background-color: var(--buttons-color);
+  @mixin flex-just-align center, center;
+  cursor: pointer;
 }
 
 .infoIcon {
-    @mixin responsive width, 20;
-    @mixin responsive height, 20;
+  @mixin responsive width, 20;
+  @mixin responsive height, 20;
 }
 
 @media screen and (max-width: 992px) {
-    .open_modal_button {
-        border: 1px solid var(--info-color);
-    }
+  .open_modal_button {
+    border: 1px solid var(--info-color);
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .title {
-        @mixin responsive font-size, 14;
-    }
+  .title {
+    @mixin responsive font-size, 14;
+  }
 
-    .author {
-        @mixin responsive font-size, 14;
-        @mixin responsive margin-bottom, 11;
-    }
+  .author {
+    @mixin responsive font-size, 14;
+    @mixin responsive margin-bottom, 11;
+  }
 
-    .checkbox_block {
-        @mixin responsive font-size, 11;
-        @mixin responsive gap, 1;
-    }
+  .checkbox_block {
+    @mixin responsive font-size, 11;
+    @mixin responsive gap, 1;
+  }
 
-    .checkbox_sponsor {
-        @mixin responsive width, 23;
-        @mixin responsive height, 23;
-    }
+  .checkbox_sponsor {
+    @mixin responsive width, 23;
+    @mixin responsive height, 23;
+  }
 
-    .button_place {
-        flex-direction: column;
-    }
+  .button_place {
+    flex-direction: column;
+  }
 
-    .download_button {
-        @mixin responsive width, 70;
-        @mixin responsive height, 27;
-        @mixin responsive font-size, 11;
-    }
+  .download_button {
+    @mixin responsive width, 70;
+    @mixin responsive height, 27;
+    @mixin responsive font-size, 11;
+  }
 
-    .drop_list_button {
-        @mixin responsive width, 27;
-        @mixin responsive height, 27;
-    }
+  .drop_list_button {
+    @mixin responsive width, 27;
+    @mixin responsive height, 27;
+  }
 
-    .main_buttons_block {
-        @mixin responsive margin-top, 10;
-        order: 1;
-    }
+  .main_buttons_block {
+    @mixin responsive margin-top, 10;
+    order: 1;
+  }
 
-    .audio_check_checkbox_place {
-        @mixin responsive font-size, 11;
-        @mixin responsive gap, 2;
-        order: 0;
-    }
+  .audio_check_checkbox_place {
+    @mixin responsive font-size, 11;
+    @mixin responsive gap, 2;
+    order: 0;
+  }
 
-    .audio_check_checkbox {
-        @mixin responsive width, 23;
-        @mixin responsive height, 23;
-    }
+  .audio_check_checkbox {
+    @mixin responsive width, 23;
+    @mixin responsive height, 23;
+  }
 
-    .drop_list_button {
-        margin: 0;
-    }
+  .drop_list_button {
+    margin: 0;
+  }
 
-    .open_modal_button {
-        @mixin responsive width, 18;
-        @mixin responsive height, 18;
-        @mixin responsive font-size, 12;
-        border: 1px solid var(--info-color);
-        border-radius: 50%;
-    }
+  .open_modal_button {
+    @mixin responsive width, 18;
+    @mixin responsive height, 18;
+    @mixin responsive font-size, 12;
+    border: 1px solid var(--info-color);
+    border-radius: 50%;
+  }
 
-    .image-result {
-        @mixin responsive width, 155;
-        @mixin responsive height, 113;
-    }
+  .image-result {
+    @mixin responsive width, 155;
+    @mixin responsive height, 113;
+  }
 
-    .image_block {
-        @mixin responsive width, 155;
-        @mixin responsive height, 113;
-        @mixin responsive border-radius, 15;
-    }
+  .image_block {
+    @mixin responsive width, 155;
+    @mixin responsive height, 113;
+    @mixin responsive border-radius, 15;
+  }
 
-    .audio_check_checkbox:checked {
-        @mixin responsive background-size, 13;
-    }
+  .audio_check_checkbox:checked {
+    @mixin responsive background-size, 13;
+  }
 
-    .checkbox_sponsor:checked {
-        @mixin responsive background-size, 13;
-    }
+  .checkbox_sponsor:checked {
+    @mixin responsive background-size, 13;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .block {
-        @mixin responsive width, 280;
-        @mixin responsive height, 179;
-        @mixin responsive padding-top, 15;
-        @mixin responsive padding-right, 15;
-        @mixin responsive padding-bottom, 15;
-        @mixin responsive padding-left, 15;
-        @mixin responsive border-radius, 30;
-        @mixin responsive gap, 10;
-    }
+  .block {
+    @mixin responsive width, 280;
+    @mixin responsive height, 179;
+    @mixin responsive padding-top, 15;
+    @mixin responsive padding-right, 15;
+    @mixin responsive padding-bottom, 15;
+    @mixin responsive padding-left, 15;
+    @mixin responsive border-radius, 30;
+    @mixin responsive gap, 10;
+  }
 }

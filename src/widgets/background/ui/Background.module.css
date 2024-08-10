@@ -1,28 +1,28 @@
 @import url('@/shared/styles/mixins.css');
 
 .background {
-    position: absolute;
-    width: 100%;
-    filter: blur(clamp(2.1vw, 2.1vw, 11.1vw));
-    top: 19vh;
-    z-index: -100;
-    @mixin responsive height, 600;
+  position: absolute;
+  width: 100%;
+  filter: blur(clamp(2.1vw, 2.1vw, 11.1vw));
+  top: 19vh;
+  z-index: -100;
+  @mixin responsive height, 600;
 
-    >svg {
-        width: 100%;
-        max-height: 100%;
-    }
+  > svg {
+    width: 100%;
+    max-height: 100%;
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .background {
-        top: 27vh;
-    }
+  .background {
+    top: 27vh;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .background {
-        @mixin responsive height, 500;
-        top: 13vh;
-    }
+  .background {
+    @mixin responsive height, 500;
+    top: 13vh;
+  }
 }

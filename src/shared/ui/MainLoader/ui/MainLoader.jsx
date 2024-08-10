@@ -1,13 +1,12 @@
 import styles from './MainLoader.module.css';
 import { useEffect, useState } from 'react';
 
-
 export const MainLoader = ({ isAudio }) => {
   const [dots, setDots] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDots(prevDots => (prevDots.length < 3 ? prevDots + '.' : ''));
+      setDots((prevDots) => (prevDots.length < 3 ? prevDots + '.' : ''));
     }, 500);
 
     return () => clearInterval(interval);
@@ -16,10 +15,18 @@ export const MainLoader = ({ isAudio }) => {
   return (
     <dialog className={styles.modal} open>
       <article className={styles.block}>
-        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.loader}>
+        <svg
+          width="82"
+          height="82"
+          viewBox="0 0 82 82"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={styles.loader}
+        >
           <g clipPath="url(#clip0_119_352)">
             <g filter="url(#filter0_d_119_352)">
-              <path d="M41.0002 75.1666C36.3307 75.1666 31.9175 74.2698 27.7606 
+              <path
+                d="M41.0002 75.1666C36.3307 75.1666 31.9175 74.2698 27.7606 
               72.476C23.6036 70.6823 19.9734 68.2337 16.87 65.1302C13.7665 62.0267 
               11.3179 58.3965 9.52412 54.2396C7.73037 50.0826 6.8335 45.6694 6.8335 
               41C6.8335 36.2736 7.73037 31.8462 9.52412 27.7177C11.3179 23.5892 13.7665 
@@ -34,19 +41,46 @@ export const MainLoader = ({ isAudio }) => {
               70.7821 37.5833 71.7502 37.5833C72.7182 37.5833 73.5297 37.9107 74.1845 38.5656C74.8394 
               39.2205 75.1668 40.0319 75.1668 41C75.1668 45.6694 74.27 50.0826 72.4762 54.2396C70.6825 
               58.3965 68.2338 62.0267 65.1304 65.1302C62.0269 68.2337 58.4109 70.6823 54.2825 
-              72.476C50.154 74.2698 45.7266 75.1666 41.0002 75.1666Z" fill="#D5D4DA" />
+              72.476C50.154 74.2698 45.7266 75.1666 41.0002 75.1666Z"
+                fill="#D5D4DA"
+              />
             </g>
           </g>
           <defs>
-            <filter id="filter0_d_119_352" x="2.8335" y="6.83331" width="76.3335" height="76.3333" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <filter
+              id="filter0_d_119_352"
+              x="2.8335"
+              y="6.83331"
+              width="76.3335"
+              height="76.3333"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
               <feOffset dy="4" />
               <feGaussianBlur stdDeviation="2" />
               <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
-              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_119_352" />
-              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_119_352" result="shape" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_119_352"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_119_352"
+                result="shape"
+              />
             </filter>
             <clipPath id="clip0_119_352">
               <rect width="82" height="82" fill="white" />
@@ -54,10 +88,12 @@ export const MainLoader = ({ isAudio }) => {
           </defs>
         </svg>
         <div className={styles.information}>
-          <h2 className={styles.title}>Загрузка {isAudio ? 'аудио' : 'видео'}</h2>
+          <h2 className={styles.title}>
+            Загрузка {isAudio ? 'аудио' : 'видео'}
+          </h2>
           <p className={styles.dots}>{dots}</p>
         </div>
       </article>
     </dialog>
-  )
-}
+  );
+};

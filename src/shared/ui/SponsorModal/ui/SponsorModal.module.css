@@ -1,32 +1,32 @@
 @import url('@/shared/styles/mixins.css');
 
 .modal {
-    @mixin responsive width, 324;
-    @mixin responsive border-radius, 30;
-    border: none;
-    z-index: 10000;
-    background-color: #6B6B6C;
-    color: #fff;
-    top: 100%;
-    animation: openModal .5s ease;
+  @mixin responsive width, 324;
+  @mixin responsive border-radius, 30;
+  border: none;
+  z-index: 10000;
+  background-color: #6b6b6c;
+  color: #fff;
+  top: 100%;
+  animation: openModal 0.5s ease;
 }
 
 @keyframes openModal {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 .content {
-    @mixin flex-just-align center, start;
-    flex-direction: column;
-    @mixin text-ser 14, 700, 1.5;
+  @mixin flex-just-align center, start;
+  flex-direction: column;
+  @mixin text-ser 14, 700, 1.5;
 }
 
 .data {
-    font-weight: 200;
+  font-weight: 200;
 }

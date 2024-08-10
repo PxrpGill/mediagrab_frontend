@@ -10,20 +10,14 @@ import { useEffect } from 'react';
 export const Content = observer(() => {
   const { isLoadingDownload, onlyAudio, isGettedData } = cardStore;
 
-  useEffect(() => {
-
-  }, [isGettedData]);
+  useEffect(() => {}, [isGettedData]);
 
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        {
-          isLoadingDownload && <MainLoader isAudio={onlyAudio} />
-        }
+        {isLoadingDownload && <MainLoader isAudio={onlyAudio} />}
         <Search />
-        {
-          isGettedData && <Download />
-        }
+        {isGettedData && <Download />}
       </div>
     </main>
   );

@@ -1,83 +1,82 @@
 @import url('@/shared/styles/mixins.css');
 
-
 .modal {
-    @mixin responsive width, 240;
-    padding: 0;
-    border: none;
-    background: none;
-    @mixin responsive top, 30;
-    overflow: hidden;
-    @mixin responsive border-radius, 15;
-    box-shadow: 0px 0px 4px black;
+  @mixin responsive width, 240;
+  padding: 0;
+  border: none;
+  background: none;
+  @mixin responsive top, 30;
+  overflow: hidden;
+  @mixin responsive border-radius, 15;
+  box-shadow: 0px 0px 4px black;
 }
 
 .modal.open {
-    animation: openModal 0.5s ease;
+  animation: openModal 0.5s ease;
 }
 
 .modal.closing {
-    animation: closeModal 0.5s ease;
+  animation: closeModal 0.5s ease;
 }
 
 @keyframes openModal {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes closeModal {
-    from {
-        opacity: 1;
-    }
+  from {
+    opacity: 1;
+  }
 
-    to {
-        opacity: 0;
-    }
+  to {
+    opacity: 0;
+  }
 }
 
 .block {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .button {
-    width: 100%;
-    @mixin responsive height, 32;
-    @mixin text-ser 14, 400, 1;
-    @mixin flex-just-align space-between, center;
-    cursor: pointer;
-    background-color: var(--element-color);
-    color: var(--title-text-color);
-    border: none;
-    transition: .5s;
+  width: 100%;
+  @mixin responsive height, 32;
+  @mixin text-ser 14, 400, 1;
+  @mixin flex-just-align space-between, center;
+  cursor: pointer;
+  background-color: var(--element-color);
+  color: var(--title-text-color);
+  border: none;
+  transition: 0.5s;
 }
 
 .button:hover {
-    background-color: var(--hover-button);
-    color: #fff;
+  background-color: var(--hover-button);
+  color: #fff;
 }
 
 .button_selected {
-    width: 100%;
-    @mixin responsive height, 32;
-    @mixin text-ser 14, 400, 1;
-    @mixin flex-just-align space-between, center;
-    cursor: pointer;
-    background-color: #222222;
-    color: #fff;
-    border: none;
-    transition: .5s;
+  width: 100%;
+  @mixin responsive height, 32;
+  @mixin text-ser 14, 400, 1;
+  @mixin flex-just-align space-between, center;
+  cursor: pointer;
+  background-color: #222222;
+  color: #fff;
+  border: none;
+  transition: 0.5s;
 }
 
 .text_left {
-    @mixin responsive margin-left, 16;
+  @mixin responsive margin-left, 16;
 }
 
 .text_right {
-    @mixin responsive margin-right, 16;
+  @mixin responsive margin-right, 16;
 }

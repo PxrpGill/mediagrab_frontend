@@ -1,65 +1,65 @@
 @import url('@/shared/styles/mixins.css');
 
 .dialog {
-    border: none;
-    @mixin responsive width, 175;
-    @mixin responsive padding-top, 10;
-    @mixin responsive padding-bottom, 10;
-    @mixin responsive padding-left, 16;
-    @mixin responsive padding-right, 16;
-    left: 40%;
-    top: 110%;
-    background-color: var(--modal-color);
-    @mixin responsive border-radius, 15;
-    animation: 0.5s openModal ease;
-    padding: 0;
-    overflow: hidden;
-    box-shadow: 0px 0px 0.2vw black;
+  border: none;
+  @mixin responsive width, 175;
+  @mixin responsive padding-top, 10;
+  @mixin responsive padding-bottom, 10;
+  @mixin responsive padding-left, 16;
+  @mixin responsive padding-right, 16;
+  left: 40%;
+  top: 110%;
+  background-color: var(--modal-color);
+  @mixin responsive border-radius, 15;
+  animation: 0.5s openModal ease;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0px 0px 0.2vw black;
 }
 
 @keyframes openModal {
-    from {
-        opacity: 0
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 .block {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
-    width: 100%;
-    @mixin responsive height, 32;
-    @mixin flex-just-align center, center;
-    background-color: #222222;
+  width: 100%;
+  @mixin responsive height, 32;
+  @mixin flex-just-align center, center;
+  background-color: #222222;
 }
 
 .titleText {
-    @mixin text-ser 15, 400, 1;
-    color: white;
+  @mixin text-ser 15, 400, 1;
+  color: white;
 }
 
 .button {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    @mixin responsive padding-left, 16;
-    width: 100%;
-    @mixin responsive height, 32;
-    background-color: #3C3C3C;
-    border: none;
-    @mixin text-ser 14, 400, 1;
-    color: white;
-    transition: .5s;
-    cursor: pointer;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  @mixin responsive padding-left, 16;
+  width: 100%;
+  @mixin responsive height, 32;
+  background-color: #3c3c3c;
+  border: none;
+  @mixin text-ser 14, 400, 1;
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .button:hover {
-    background-color: #666666;
+  background-color: #666666;
 }

@@ -1,50 +1,49 @@
 @import url('@/shared/styles/mixins.css');
 
 .footer {
-    position: relative;
-    width: 100%;
-    @mixin flex-just-align center, center;
-    @mixin responsive gap, 16;
+  position: relative;
+  width: 100%;
+  @mixin flex-just-align center, center;
+  @mixin responsive gap, 16;
 }
 
 .gitLogo {
-    @mixin responsive width, 31;
-    @mixin responsive height, 30;
+  @mixin responsive width, 31;
+  @mixin responsive height, 30;
 
-    >g {
-        >path {
-            fill: var(--git-color);
-        }
+  > g {
+    > path {
+      fill: var(--git-color);
     }
+  }
 }
 
 .gitText {
-    @mixin text-ser 16, 700, 1;
-    color: var(--title-text-color);
-    text-decoration: underline;
+  @mixin text-ser 16, 700, 1;
+  color: var(--title-text-color);
+  text-decoration: underline;
 }
 
 .vkLogo {
-    @mixin responsive width, 30;
-    @mixin responsive height, 30;
+  @mixin responsive width, 30;
+  @mixin responsive height, 30;
 }
 
 .ytLogo {
-    @mixin responsive width, 43;
-    @mixin responsive height, 30;
+  @mixin responsive width, 43;
+  @mixin responsive height, 30;
 }
 
 .link {
-    transition: .5s;
+  transition: 0.5s;
 }
 
 .link:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-
 @media screen and (max-width: 992px) {
-    .footer {
-        top: 22vh;
-    }
+  .footer {
+    top: 22vh;
+  }
 }

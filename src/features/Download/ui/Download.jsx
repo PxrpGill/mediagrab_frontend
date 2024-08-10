@@ -1,17 +1,23 @@
-import { observer } from "mobx-react-lite";
-import { Card } from "@/entities/Card";
-import { cardStore } from "@/entities/Card";
+import { observer } from 'mobx-react-lite';
+import { Card } from '@/entities/Card';
+import { cardStore } from '@/entities/Card';
 import styles from '@/entities/Card/ui/Card.module.css';
 
 export const Download = observer(() => {
   const {
-    previewUrl, authorName,
-    title, sponsorSegments,
-    quality, setQuality,
-    onlyAudio, setOnlyAudio,
-    sponsorBlock, setSponsorBlock,
-    truncateWords, getVideo,
-    getFunctionalInformation
+    previewUrl,
+    authorName,
+    title,
+    sponsorSegments,
+    quality,
+    setQuality,
+    onlyAudio,
+    setOnlyAudio,
+    sponsorBlock,
+    setSponsorBlock,
+    truncateWords,
+    getVideo,
+    getFunctionalInformation,
   } = cardStore;
 
   const downloadResource = async () => {
@@ -24,8 +30,13 @@ export const Download = observer(() => {
       const contentDisposition = response.headers.get('content-disposition');
       let filename = `${authorName} - ${title}`;
 
-      if (contentDisposition && contentDisposition.indexOf('filename=') !== -1) {
-        filename = contentDisposition.split('filename=')[1].replace(/['"]/g, '');
+      if (
+        contentDisposition &&
+        contentDisposition.indexOf('filename=') !== -1
+      ) {
+        filename = contentDisposition
+          .split('filename=')[1]
+          .replace(/['"]/g, '');
       } else {
         const contentType = response.headers.get('content-type');
         filename += contentType.includes('audio') ? '.mp3' : '.webm';
@@ -46,7 +57,8 @@ export const Download = observer(() => {
   };
 
   return (
-    <Card previewUrl={previewUrl}
+    <Card
+      previewUrl={previewUrl}
       authorName={authorName}
       title={title}
       sponsorSegments={sponsorSegments}
@@ -59,9 +71,11 @@ export const Download = observer(() => {
       truncateWords={truncateWords}
       getFunctionalInformation={getFunctionalInformation}
     >
-      <button type="button"
+      <button
+        type="button"
         className={styles.download_button}
-        onClick={downloadResource}>
+        onClick={downloadResource}
+      >
         Скачать
       </button>
     </Card>

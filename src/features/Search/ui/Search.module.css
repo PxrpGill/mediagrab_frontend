@@ -1,138 +1,137 @@
 @import url('@/shared/styles/mixins.css');
 
 .form {
-    /*@mixin responsive margin-top, 200;*/
-    @mixin flex-just-align center, center;
-    z-index: 10;
+  /*@mixin responsive margin-top, 200;*/
+  @mixin flex-just-align center, center;
+  z-index: 10;
 }
 
 .input_link {
-    @mixin responsive width, 581;
-    @mixin responsive height, 86;
-    border-radius: 8.9vw 0px 0px 8.9vw;
-    appearance: none;
-    border: none;
-    padding: 0;
-    @mixin responsive padding-left, 26;
-    @mixin text-ser 20, 400, 1;
-    outline: none;
-    background-color: var(--element-color);
-    color: var(--main-text-color);
-    appearance: none;
+  @mixin responsive width, 581;
+  @mixin responsive height, 86;
+  border-radius: 8.9vw 0px 0px 8.9vw;
+  appearance: none;
+  border: none;
+  padding: 0;
+  @mixin responsive padding-left, 26;
+  @mixin text-ser 20, 400, 1;
+  outline: none;
+  background-color: var(--element-color);
+  color: var(--main-text-color);
+  appearance: none;
 }
 
 .input_link:focus {
-    outline: none;
+  outline: none;
 }
 
 .inputed {
-    @mixin responsive width, 581;
-    @mixin responsive height, 86;
-    border-radius: 8.9vw 0px 0px 8.9vw;
-    appearance: none;
-    border: none;
-    padding: 0;
-    @mixin responsive padding-left, 26;
-    @mixin text-ser 20, 400, 1;
-    outline: none;
-    background-color: var(--element-color);
-    color: #737373;
-    appearance: none;
+  @mixin responsive width, 581;
+  @mixin responsive height, 86;
+  border-radius: 8.9vw 0px 0px 8.9vw;
+  appearance: none;
+  border: none;
+  padding: 0;
+  @mixin responsive padding-left, 26;
+  @mixin text-ser 20, 400, 1;
+  outline: none;
+  background-color: var(--element-color);
+  color: #737373;
+  appearance: none;
 }
 
 .inputed:-webkit-autofill,
 .inputed:-webkit-autofill:hover,
 .inputed:-webkit-autofill:focus {
-    border: none;
-    -webkit-text-fill-color: #737373;
-    -webkit-box-shadow: 0 0 0px 1000px var(--element-color) inset;
-    transition: background-color 5000s ease-in-out 0s;
+  border: none;
+  -webkit-text-fill-color: #737373;
+  -webkit-box-shadow: 0 0 0px 1000px var(--element-color) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .inputed:focus {
-    outline: none;
+  outline: none;
 }
 
 .submit_button {
-    @mixin responsive width, 60;
-    @mixin responsive height, 86;
-    margin: 0;
-    appearance: none;
-    border: none;
-    border-radius: 0px 8.9vw 8.9vw 0px;
-    @mixin flex-just-align center, center;
-    background-color: var(--buttons-color);
-    cursor: pointer;
+  @mixin responsive width, 60;
+  @mixin responsive height, 86;
+  margin: 0;
+  appearance: none;
+  border: none;
+  border-radius: 0px 8.9vw 8.9vw 0px;
+  @mixin flex-just-align center, center;
+  background-color: var(--buttons-color);
+  cursor: pointer;
 }
 
 .error_button {
-    @mixin responsive width, 60;
-    @mixin responsive height, 86;
-    margin: 0;
-    appearance: none;
-    border: none;
-    border-radius: 0px 8.9vw 8.9vw 0px;
-    @mixin flex-just-align center, center;
-    background-color: #530D0D;
-    cursor: pointer;
+  @mixin responsive width, 60;
+  @mixin responsive height, 86;
+  margin: 0;
+  appearance: none;
+  border: none;
+  border-radius: 0px 8.9vw 8.9vw 0px;
+  @mixin flex-just-align center, center;
+  background-color: #530d0d;
+  cursor: pointer;
 }
 
 .searchIcon {
-    @mixin responsive width, 22;
-    @mixin responsive height, 22;
+  @mixin responsive width, 22;
+  @mixin responsive height, 22;
 }
 
 .loader {
-    animation: rotate 1s linear infinite;
-    @mixin responsive width, 24;
-    @mixin responsive height, 24;
+  animation: rotate 1s linear infinite;
+  @mixin responsive width, 24;
+  @mixin responsive height, 24;
 }
 
 .cross {
-    @mixin responsive width, 22;
-    @mixin responsive height, 22;
+  @mixin responsive width, 22;
+  @mixin responsive height, 22;
 }
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-
 @media screen and (max-width: 576px) {
-    .form {
-        /*@mixin responsive margin-top, 180;*/
-        margin-top: 20vh;
-    }
+  .form {
+    /*@mixin responsive margin-top, 180;*/
+    margin-top: 20vh;
+  }
 
-    .inputed {
-        @mixin responsive width, 220;
-        @mixin responsive height, 65;
-        @mixin text-ser 15, 400, 1;
-        padding: 0;
-        @mixin responsive padding-left, 26;
-    }
+  .inputed {
+    @mixin responsive width, 220;
+    @mixin responsive height, 65;
+    @mixin text-ser 15, 400, 1;
+    padding: 0;
+    @mixin responsive padding-left, 26;
+  }
 
-    .input_link {
-        @mixin responsive width, 220;
-        @mixin responsive height, 65;
-        @mixin text-ser 15, 400, 1;
-        padding: 0;
-        @mixin responsive padding-left, 26;
-    }
+  .input_link {
+    @mixin responsive width, 220;
+    @mixin responsive height, 65;
+    @mixin text-ser 15, 400, 1;
+    padding: 0;
+    @mixin responsive padding-left, 26;
+  }
 
-    .submit_button {
-        @mixin responsive width, 60;
-        @mixin responsive height, 65;
-    }
+  .submit_button {
+    @mixin responsive width, 60;
+    @mixin responsive height, 65;
+  }
 
-    .error_button {
-        @mixin responsive width, 60;
-        @mixin responsive height, 65;
-    }
+  .error_button {
+    @mixin responsive width, 60;
+    @mixin responsive height, 65;
+  }
 }

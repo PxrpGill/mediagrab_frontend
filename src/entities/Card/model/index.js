@@ -1,6 +1,5 @@
-import { makeAutoObservable, runInAction } from "mobx";
-import { getVideo } from "@/shared/api/requests";
-
+import { makeAutoObservable, runInAction } from 'mobx';
+import { getVideo } from '@/shared/api/requests';
 
 class CardStore {
   previewUrl = '';
@@ -19,7 +18,8 @@ class CardStore {
   isLoadingDownload = false;
 
   isErrorInput = false;
-  ErrorInput = 'Упс... Произошла ошибка с нашей стороны. Повторите попытку позднее';
+  ErrorInput =
+    'Упс... Произошла ошибка с нашей стороны. Повторите попытку позднее';
 
   isErrorValidation = false;
 
@@ -39,13 +39,13 @@ class CardStore {
       return words.slice(0, this.maxLengthWord).join(' ') + '...';
     }
     return string;
-  }
+  };
 
   setUrl = (url) => {
     runInAction(() => {
       this.videoUrl = url;
     });
-  }
+  };
 
   getInformation = async () => {
     try {
@@ -54,7 +54,7 @@ class CardStore {
       });
 
       const params = {
-        url: this.videoUrl
+        url: this.videoUrl,
       };
       const response = await getVideo(params);
 
@@ -68,32 +68,32 @@ class CardStore {
     } catch (error) {
       runInAction(() => {
         this.isErrorInput = true;
-      })
+      });
       console.log('Произошла ошибка: ', error);
     } finally {
       runInAction(() => {
         this.isLoadingSearch = false;
-      })
+      });
     }
-  }
+  };
 
   setQuality = (userQuality) => {
     runInAction(() => {
       this.quality = userQuality;
     });
-  }
+  };
 
   setSponsorBlock = (userSponsorBlock) => {
     runInAction(() => {
-      this.sponsorBlock = userSponsorBlock
+      this.sponsorBlock = userSponsorBlock;
     });
-  }
+  };
 
   setOnlyAudio = (userAudio) => {
     runInAction(() => {
       this.onlyAudio = userAudio;
     });
-  }
+  };
 
   getVideo = async () => {
     try {
@@ -102,32 +102,32 @@ class CardStore {
       });
 
       const response = await fetch(
-        `https://api.mediagrab.ru/video_audio?url=${this.videoUrl}&quality=${this.quality}&only_audio=${this.onlyAudio}&sponsor_block=${this.sponsorBlock}`
+        `https://api.mediagrab.ru/video_audio?url=${this.videoUrl}&quality=${this.quality}&only_audio=${this.onlyAudio}&sponsor_block=${this.sponsorBlock}`,
       );
       return response;
     } catch (error) {
       runInAction(() => {
         this.isError = true;
-      })
+      });
       console.log('Произошла ошибка: ', error);
     } finally {
       runInAction(() => {
         this.isLoadingDownload = false;
-      })
+      });
     }
-  }
+  };
 
   resetInformation = () => {
     runInAction(() => {
       this.isGettedData = false;
     });
-  }
+  };
 
   resetErrorInput = () => {
     runInAction(() => {
       this.isErrorInput = false;
     });
-  }
+  };
 
   getFunctionalInformation = async () => {
     try {
@@ -139,7 +139,7 @@ class CardStore {
     } catch (error) {
       console.log('Произошла ошибка получения информации о функциях');
     }
-  }
+  };
 }
 
 export const cardStore = new CardStore();

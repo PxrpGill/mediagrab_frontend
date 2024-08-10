@@ -5,11 +5,23 @@ import ytLogo from '@/shared/assets/images/ytLogo.png';
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a href="https://github.com/actusnileh/MultiGrab" className={styles.link} target="_blank">
-        <svg width="31" height="30" viewBox="0 0 31 30" fill="none"
-          xmlns="http://www.w3.org/2000/svg" className={styles.gitLogo}>
+      <a
+        href="https://github.com/actusnileh/MultiGrab"
+        className={styles.link}
+        target="_blank"
+      >
+        <svg
+          width="31"
+          height="30"
+          viewBox="0 0 31 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={styles.gitLogo}
+        >
           <g clipPath="url(#clip0_69_652)">
-            <path fillRule="evenodd" clipRule="evenodd"
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M15.4538 0C6.90826 0 0 6.875 0 15.3803C0 22.1791 4.42636 27.9341 
               10.5669 29.9709C11.3346 30.1241 11.6158 29.64 11.6158 29.2328C11.6158 
               28.8762 11.5905 27.6541 11.5905 26.3806C7.29164 27.2975 6.39644 24.5472 
@@ -26,7 +38,8 @@ export const Footer = () => {
               18.2425 22.1537C18.8056 22.6375 19.2915 23.5541 19.2915 25.0056C19.2915 
               27.0681 19.2662 28.7234 19.2662 29.2325C19.2662 29.64 19.5477 30.1241 
               20.3151 29.9712C26.4557 27.9337 30.882 22.1791 30.882 15.3803C30.9073 
-              6.875 23.9738 0 15.4538 0Z" fill="white"
+              6.875 23.9738 0 15.4538 0Z"
+              fill="white"
             />
           </g>
           <defs>
@@ -36,9 +49,13 @@ export const Footer = () => {
           </defs>
         </svg>
       </a>
-      <a href="https://github.com/actusnileh/MultiGrab" className={styles.link} target="_blank">
+      <a
+        href="https://github.com/actusnileh/MultiGrab"
+        className={styles.link}
+        target="_blank"
+      >
         <p className={styles.gitText}>github</p>
       </a>
     </footer>
   );
-}
+};

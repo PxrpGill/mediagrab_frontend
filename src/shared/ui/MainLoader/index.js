@@ -1,1 +1,1 @@
-export { MainLoader } from "./ui/MainLoader";
+export { MainLoader } from './ui/MainLoader';
