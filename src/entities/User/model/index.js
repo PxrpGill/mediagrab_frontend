@@ -76,4 +76,4 @@ class User {
   };
 }
 
-export const user = new User();
+export const userStore = new User();

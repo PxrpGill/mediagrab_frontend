@@ -1,0 +1,117 @@
+@import url('@/shared/styles/mixins.css');
+
+.button {
+    @mixin text-ser 16, 700, 1;
+    padding: 0;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.button:hover {
+    transform: scale(1.03);
+}
+
+.modal {
+    @mixin responsive width, 489;
+    z-index: 1000;
+    border: none;
+    @mixin responsive border-radius, 24;
+    background-color: #424242;
+    overflow: hidden;
+    @mixin responsive padding, 40;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.5vw);
+    z-index: 1;
+}
+
+.container {
+    @mixin flex-just-align start, start;
+    flex-direction: column;
+    @mixin responsive gap, 24;
+    width: 100%;
+}
+
+.modalTitle {
+    width: 100%;
+    @mixin flex-just-align space-between, center;
+    color: white;
+}
+
+.title {
+    @mixin text-ser 24, 500, 1;
+}
+
+.form {
+    @mixin flex-just-align start, start;
+    flex-direction: column;
+    @mixin responsive gap, 24;
+    width: 100%;
+}
+
+.label {
+    @mixin flex-just-align start, start;
+    flex-direction: column;
+    @mixin responsive gap, 11;
+    @mixin text-ser 16, 400, 1;
+    color: white;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    @mixin responsive height, 56;
+    @mixin text-ser 16, 600, 1;
+    @mixin responsive border-radius, 12;
+    background: none;
+    color: white;
+    @mixin responsive text-indent, 15;
+    border: 0.1vw solid #666666;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.buttonSubmit {
+    width: 100%;
+    @mixin responsive height, 64;
+    @mixin responsive border-radius, 32;
+    @mixin text-ser 22, 500, 1;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+}
+
+.buttonSubmit:hover {
+    transform: scale(1.05);
+}
+
+.passwordLabel {
+    width: 100%;
+    @mixin flex-just-align space-between, center
+}
+
+.hide {
+    @mixin flex-just-align center, center;
+    @mixin responsive gap, 5;
+    @mixin text-ser 18, 400, 1;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.hide:hover {
+    transform: scale(1.05);
+}
+
+.error {
+    border: 0.1vw solid red;
+}
