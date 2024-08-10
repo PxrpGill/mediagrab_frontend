@@ -19,7 +19,7 @@ class User {
         }),
       });
       const response = await fetch(request);
-
+      
     } catch (error) {
 
     }
