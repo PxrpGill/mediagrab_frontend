@@ -10,7 +10,7 @@ class User {
 
   register = async (username, email, password) => {
     try {
-      const request = new Request("https://mediagrab.ru/auth/register", {
+      const request = new Request("https://mediagrab.ru:228/auth/register", {
         method: "POST",
         body: JSON.stringify({
           username: username,
