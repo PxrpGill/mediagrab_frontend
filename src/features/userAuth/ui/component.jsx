@@ -2,6 +2,7 @@ import style from './style.module.css';
 import { Cabinet } from '../../../entities/User';
 import { RegisterModal } from './registerModal';
 import { useState } from 'react';
+import { AuthModal } from './authModal';
 
 export const UserAuth = ({ opened, setOpen }) => {
   const [isRegisterOpen, toggleRegister] = useState(false);
@@ -17,6 +18,7 @@ export const UserAuth = ({ opened, setOpen }) => {
         Войти
       </button>
       <RegisterModal isOpen={isRegisterOpen} toggle={toggleRegister} />
+      <AuthModal isOpen={isAuthOpen} toggle={toggleAuth} />
     </Cabinet>
   );
 };
