@@ -1,4 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
+import Cookies from 'js-cookie';
 
 class User {
   isRegisterLoading = false;
@@ -64,6 +65,9 @@ class User {
       );
       const responseTokens = await fetch(requestTokens);
       const dataTokens = await responseTokens.json();
+      Cookies.set("user_id", dataTokens.user_id);
+      Cookies.set("access_token", dataTokens.access_token);
+      Cookies.set("refresh_token", dataTokens.refresh_token)
       console.log(responseTokens, dataTokens);
       if (dataTokens.user_id) {
         const aboutUserResponse = await fetch(
