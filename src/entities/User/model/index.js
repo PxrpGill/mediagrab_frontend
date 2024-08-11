@@ -19,7 +19,7 @@ class User {
       runInAction(() => {
         this.isRegisterLoading = true;
       });
-      const request = new Request("https://mediagrab.ru/auth/register", {
+      const request = new Request("https://api.mediagrab.ru:228/auth/register", {
         method: "POST",
         body: JSON.stringify({
           username: username,
@@ -28,6 +28,7 @@ class User {
         }),
       });
       const response = await fetch(request);
+      console.log(response);
     } catch (error) {
       console.error(error);
     } finally {

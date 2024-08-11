@@ -1,7 +1,10 @@
 import { useRef, useEffect, useState } from 'react';
 import style from './style.module.css';
+import { userStore } from '../../../entities/User';
+import { observer } from 'mobx-react-lite';
 
-export const RegisterModal = ({ isOpen, toggle }) => {
+export const RegisterModal = observer(({ isOpen, toggle }) => {
+  const { register } = userStore;
   const dialogRef = useRef(null);
   const [hidden, setHidden] = useState(false);
   const [username, setUsername] = useState('');
@@ -48,6 +51,7 @@ export const RegisterModal = ({ isOpen, toggle }) => {
     event.preventDefault();
     if (validateForm()) {
       sendData();
+      register(username, email, password);
     }
   };
 
@@ -149,4 +153,4 @@ export const RegisterModal = ({ isOpen, toggle }) => {
       </div>
     </dialog>
   );
-};
+});
