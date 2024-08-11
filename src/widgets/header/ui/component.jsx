@@ -1,4 +1,4 @@
-import styles from './Header.module.css';
+import styles from './style.module.css';
 import multiLogo from '@/shared/assets/images/multiLogo.png';
 import { UserAuth } from '../../../features/userAuth';
 

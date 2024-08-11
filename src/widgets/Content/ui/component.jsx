@@ -1,29 +1,23 @@
 import { observer } from 'mobx-react-lite';
 
-import styles from './Сontent.module.css';
-import { Search } from '@/features/Search';
-import { Download } from '@/features/Download/ui/Download';
-import { cardStore } from '@/entities/Card/model';
+import styles from './style.module.css';
+import { Search } from '@/features/search';
+import { Download } from '../../../features/download';
+import { cardStore } from '@/entities/card/model';
 import { MainLoader } from '@/shared/ui/MainLoader/ui/MainLoader';
 import { useEffect } from 'react';
 
 export const Content = observer(() => {
   const { isLoadingDownload, onlyAudio, isGettedData } = cardStore;
 
-  useEffect(() => {
-
-  }, [isGettedData]);
+  useEffect(() => {}, [isGettedData]);
 
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        {
-          isLoadingDownload && <MainLoader isAudio={onlyAudio} />
-        }
+        {isLoadingDownload && <MainLoader isAudio={onlyAudio} />}
         <Search />
-        {
-          isGettedData && <Download />
-        }
+        {isGettedData && <Download />}
       </div>
     </main>
   );

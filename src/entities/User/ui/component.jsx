@@ -1,4 +1,4 @@
-import style from './Cabinet.module.css';
+import style from './style.module.css';
 
 export const Cabinet = ({ children }) => {
   return (

@@ -1,1 +1,1 @@
-export { Download } from './ui/Download';
+export { Download } from './ui/component';
