@@ -1,4 +1,4 @@
-import { MainPage } from "@/pages/MainPage";
+import { MainPage } from "@/pages/mainPage";
 import { HistoryPage } from "@/pages/History";
 import { createBrowserRouter } from "react-router-dom";
 
