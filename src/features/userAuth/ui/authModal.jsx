@@ -4,7 +4,7 @@ import { userStore } from '../../../entities/User';
 import { observer } from 'mobx-react-lite';
 
 export const AuthModal = observer(({ isOpen, toggle }) => {
-  const { register } = userStore;
+  const { auth } = userStore;
   const dialogRef = useRef(null);
   const [hidden, setHidden] = useState(false);
   const [email, setEmail] = useState('');
@@ -45,7 +45,7 @@ export const AuthModal = observer(({ isOpen, toggle }) => {
     event.preventDefault();
     if (validateForm()) {
       sendData();
-      register(username, email, password);
+      auth(email, password);
     }
   };
 
@@ -121,11 +121,7 @@ export const AuthModal = observer(({ isOpen, toggle }) => {
               </span>
             )}
           </div>
-          <input
-            type="submit"
-            value="Войти"
-            className={style.buttonSubmit}
-          />
+          <input type="submit" value="Войти" className={style.buttonSubmit} />
         </form>
       </div>
     </dialog>
