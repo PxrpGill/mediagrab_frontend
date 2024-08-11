@@ -22,9 +22,9 @@ class User {
       const request = new Request("https://api.mediagrab.ru:228/auth/register", {
         method: "POST",
         body: JSON.stringify({
-          username: username,
-          email: email,
-          password: password,
+          "username": username,
+          "email": email,
+          "password": password,
         }),
       });
       const response = await fetch(request);
