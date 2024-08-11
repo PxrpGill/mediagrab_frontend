@@ -1,4 +1,4 @@
-import { Content } from "@/widgets/Content";
+import { Content } from "@/widgets/content";
 import { Header } from "@/widgets/header";
 import { Footer } from "@/widgets/footer";
 import { Background } from "@/widgets/background";

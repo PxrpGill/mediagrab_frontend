@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import style from './style.module.css';
-import { userStore } from '../../../entities/User';
+import { userStore } from '../../../entities/user';
 import { observer } from 'mobx-react-lite';
 
 export const RegisterModal = observer(({ isOpen, toggle }) => {

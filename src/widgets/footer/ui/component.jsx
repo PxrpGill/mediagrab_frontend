@@ -1,4 +1,4 @@
-import styles from './Footer.module.css';
+import styles from './style.module.css';
 import vkLogo from '@/shared/assets/images/vkLogo.png';
 import ytLogo from '@/shared/assets/images/ytLogo.png';
 

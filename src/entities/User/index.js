@@ -1,2 +1,2 @@
-export { Cabinet } from './ui/Cabinet';
+export { Cabinet } from './ui/component';
 export { userStore } from './model/index';

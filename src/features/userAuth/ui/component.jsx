@@ -1,9 +1,9 @@
 import style from './style.module.css';
-import { Cabinet } from '../../../entities/User';
+import { Cabinet } from '../../../entities/user';
 import { RegisterModal } from './registerModal';
 import { useState } from 'react';
 import { AuthModal } from './authModal';
-import { userStore } from '../../../entities/User';
+import { userStore } from '../../../entities/user';
 
 export const UserAuth = ({ opened, setOpen }) => {
   const [isRegisterOpen, toggleRegister] = useState(false);

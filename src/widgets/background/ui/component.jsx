@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Background.module.css';
+import styles from './style.module.css';
 import { smallWindow } from '@/shared/consts/window';
 
 export const Background = () => {

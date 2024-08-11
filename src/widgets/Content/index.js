@@ -1,1 +1,1 @@
-export { Content } from './ui/Сontent';
+export { Content } from './ui/component';
