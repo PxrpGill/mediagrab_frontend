@@ -1,0 +1,36 @@
+@import url('@/shared/styles/mixins.css');
+@import url('@/shared/styles/root.css');
+
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    @mixin responsive height, 80;
+    background-color: var(--header-background-color);
+}
+
+.logoPlace {
+    @mixin flex-just-align center, center;
+    grid-column: 2;
+}
+
+.authPlace {
+    @mixin flex-just-align center, center;
+}
+
+.logo {
+    @mixin responsive width, 68;
+    @mixin responsive height, 68;
+}
+
+.title {
+    @mixin text-ser 48, 700, 1;
+    color: var(--title-text-color);
+}
+
+@media screen and (max-width: 576px) {
+    .title {
+        @mixin text-ser 24, 500, 1;
+    }
+}

@@ -1,0 +1,47 @@
+@import url('@/shared/styles/mixins.css');
+
+
+.modal {
+    background: none;
+    border: none;
+    backdrop-filter: blur(0.4vw);
+    z-index: 100000;
+    width: 80vw;
+    height: 70vh;
+    @mixin flex-just-align center, center;
+}
+
+.block {
+    @mixin flex-just-align center, center;
+    flex-direction: column;
+    @mixin responsive gap, 2;
+}
+
+.title {
+    @mixin text-ser 20, 700, 1;
+    color: var(--title-text-color);
+}
+
+.dots {
+    @mixin text-ser 20, 700, 1;
+    color: var(--title-text-color);
+    @mixin responsive width, 20;
+}
+
+.loader {
+    animation: rotate 3s linear infinite;
+}
+
+.information {
+    @mixin flex-just-align center, center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

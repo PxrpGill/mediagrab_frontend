@@ -1,0 +1,37 @@
+@import url('@/shared/styles/mixins.css');
+
+
+.cabinetPlace {
+    @mixin responsive width, 323;
+    @mixin responsive height, 44;
+    @mixin flex-just-align center, center;
+    @mixin responsive gap, 13;
+    @mixin text-ser 16, 700, 1;
+    @mixin responsive border-radius, 128;
+    background-color: #424242;
+    color: white;
+}
+
+.userIcon {
+    @mixin responsive width, 24;
+    @mixin responsive height, 24;
+}
+
+.buttonPlace {
+    @mixin flex-just-align center, center;
+    @mixin responsive gap, 5;
+}
+
+.button {
+    @mixin text-ser 16, 700, 1;
+    padding: 0;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.button:hover {
+    transform: scale(1.03);
+}

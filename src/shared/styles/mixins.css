@@ -1,0 +1,39 @@
+@define-mixin responsive $property, $size {
+    $default: calc(($size / 1440) * 100);
+    $max-size-vw: calc((((7680 / 1440) * $size) / 1440) * 100);
+
+    $(property): clamp($(
+            default)vw,
+        $(
+        default)vw,
+        $(
+        max-size-vw)vw
+    );
+
+    @media screen and (max-width: 992px) {
+        $default: calc(($size / 992) * 100);
+        $max-size-vw: calc((((1440 / 992) * $size) / 992) * 100);
+
+        $(property): clamp($(default)vw, $(default)vw, $(max-size-vw)vw);
+    }
+
+    @media screen and (max-width: 576px) {
+        $default: calc(($size / 320) * 100);
+        $max-size-vw: calc((((992 / 320) * $size) / 992) * 100);
+
+        $(property): clamp($(default)vw, $(default)vw, $(max-size-vw)vw);
+    }
+}
+
+@define-mixin flex-just-align $justify, $align {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@define-mixin text-ser $size, $weight, $line {
+    font-family: 'Monstserrat';
+    @mixin responsive font-size, $size;
+    font-weight: $weight;
+    line-height: $line;
+}
